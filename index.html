@@ -1,0 +1,933 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>DeFiMind · O banco que nunca toca no teu dinheiro</title>
+<meta name="description" content="Poupanças que rendem todos os dias, com a segurança de um banco e uma diferença que muda tudo: a chave é tua. Disponível em todo o mundo, na moeda que usas.">
+<meta name="theme-color" content="#000000">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://defimind.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="DeFiMind">
+<meta property="og:title" content="DeFiMind · O banco que nunca toca no teu dinheiro">
+<meta property="og:description" content="Poupanças que rendem todos os dias, com a segurança de um banco e a chave sempre contigo.">
+<meta property="og:image" content="https://defimind.com/assets/img/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DeFiMind · O banco que nunca toca no teu dinheiro">
+<meta name="twitter:description" content="Poupanças que rendem todos os dias, com a segurança de um banco e a chave sempre contigo.">
+<meta name="twitter:image" content="https://defimind.com/assets/img/og-image.png">
+
+<link rel="icon" type="image/png" href="assets/img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="assets/css/styles.css">
+<script>document.documentElement.className+=' js';</script>
+</head>
+
+<body>
+<a class="skip-link" href="#conteudo" data-i18n="a11y.skip">Saltar para o conteúdo</a>
+
+<!-- ===================== NAV ===================== -->
+<header class="nav" id="nav">
+  <div class="nav__inner container">
+    <a class="brand" href="#top" aria-label="DeFiMind">
+      <img class="brand__mark" src="assets/img/logo.png" alt="" width="42" height="42">
+      <span class="brand__name">DeFi<span>Mind</span></span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Menu">
+      <a href="#liberdade" data-i18n="nav.freedom">Liberdade</a>
+      <a href="#seguranca" data-i18n="nav.security">Segurança</a>
+      <a href="#como-funciona" data-i18n="nav.how">Como funciona</a>
+      <a href="#planos" data-i18n="nav.plans">Planos</a>
+      <a href="#neurex" data-i18n="nav.neurex">Neurex</a>
+      <a href="#perguntas" data-i18n="nav.faq">Perguntas</a>
+
+      <div class="lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:a11y.lang">
+        <button type="button" data-lang="pt">PT</button>
+        <button type="button" data-lang="en">EN</button>
+        <button type="button" data-lang="es">ES</button>
+      </div>
+    </nav>
+
+    <div class="nav__actions">
+      <a class="btn btn--primary btn--sm" href="#lista" data-i18n="nav.cta">Lista de espera</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="orb orb--1"></div>
+    <div class="orb orb--2"></div>
+    <div class="orb orb--3"></div>
+    <div class="grid-lines"></div>
+  </div>
+
+  <div class="container hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow reveal">
+        <span class="eyebrow__dot"></span>
+        <span data-i18n="hero.badge">Onde quer que estejas, na moeda que usas</span>
+      </p>
+
+      <h1 class="hero__title reveal" data-delay="1" data-i18n="hero.title">
+        O banco que <span class="text-gradient">nunca toca</span> no teu dinheiro.
+      </h1>
+
+      <p class="hero__sub reveal" data-delay="2" data-i18n="hero.sub">
+        As tuas poupanças rendem todos os dias, sozinhas, protegidas pela mesma tecnologia
+        que os bancos usam para guardar milhões. A diferença está numa coisa só:
+        a chave é tua e mais ninguém lhe toca.
+      </p>
+
+      <div class="hero__cta reveal" data-delay="3">
+        <a class="btn btn--primary btn--lg" href="#lista">
+          <span data-i18n="hero.cta1">Entrar na lista de espera</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11M11 5.5 15.5 10 11 14.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a class="btn btn--secondary btn--lg" href="#como-funciona" data-i18n="hero.cta2">Ver como funciona</a>
+      </div>
+
+      <ul class="hero__trust reveal" data-delay="4">
+        <li data-i18n="hero.t1">Sem custos de abertura</li>
+        <li data-i18n="hero.t2">Levantas quando quiseres</li>
+        <li data-i18n="hero.t3">Vês o saldo na tua moeda</li>
+      </ul>
+    </div>
+
+    <div class="hero__visual reveal" data-delay="3">
+      <div class="phone">
+        <div class="phone__glow" aria-hidden="true"></div>
+        <div class="phone__frame">
+          <div class="phone__notch" aria-hidden="true"></div>
+          <div class="phone__screen">
+
+            <div class="app__top">
+              <div>
+                <p class="app__hello" data-i18n="app.hello">Olá, Ana</p>
+                <p class="app__label" data-i18n="app.balance">Saldo total</p>
+              </div>
+              <span class="app__cur-chip" id="appCurChip">USD</span>
+            </div>
+
+            <p class="app__balance"><span class="app__cur">$</span><span data-count-to="4287" data-decimals="2" data-locale="en-US">0</span></p>
+            <p class="app__delta">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 12.5V4M4.5 7.5 8 4l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="app.month">+$38.14 este mês</span>
+            </p>
+
+            <div class="app__chart" aria-hidden="true">
+              <svg viewBox="0 0 280 88" preserveAspectRatio="none">
+                <defs>
+                  <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop stop-color="#1eba98" stop-opacity=".38"/>
+                    <stop offset="1" stop-color="#1eba98" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <path class="chart__area" d="M0 70 C22 66 34 54 52 56 C72 58 82 40 104 41 C126 42 134 52 156 46 C178 40 186 24 210 22 C234 20 250 13 280 8 L280 88 L0 88 Z" fill="url(#areaGrad)"/>
+                <path class="chart__line" d="M0 70 C22 66 34 54 52 56 C72 58 82 40 104 41 C126 42 134 52 156 46 C178 40 186 24 210 22 C234 20 250 13 280 8" fill="none" stroke="#1eba98" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+            </div>
+
+            <div class="app__actions">
+              <button type="button" tabindex="-1"><span aria-hidden="true">↓</span><span data-i18n="app.deposit">Depositar</span></button>
+              <button type="button" tabindex="-1"><span aria-hidden="true">↑</span><span data-i18n="app.withdraw">Levantar</span></button>
+              <button type="button" tabindex="-1"><span aria-hidden="true">✦</span><span data-i18n="app.invest">Investir</span></button>
+            </div>
+
+            <div class="app__card">
+              <div class="app__card-row">
+                <span class="dot dot--brand" aria-hidden="true"></span>
+                <span class="app__card-title" data-i18n="app.plan">Plano Equilibrado</span>
+                <span class="app__card-val">24%<small data-i18n="app.year">/ano</small></span>
+              </div>
+              <div class="app__bar" aria-hidden="true"><i style="width:64%"></i></div>
+              <p class="app__card-note" data-i18n="app.since">A render desde 12 de março</p>
+            </div>
+
+            <div class="app__neurex">
+              <span class="app__neurex-avatar" aria-hidden="true">N</span>
+              <p data-i18n="app.neurex">Reequilibrei a tua carteira esta manhã. Poupaste <strong>$4.20</strong> em custos.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="float-card float-card--1" aria-hidden="true">
+        <span class="float-card__icon">🔑</span>
+        <div>
+          <p class="float-card__t" data-i18n="float.k1">A chave é tua</p>
+          <p class="float-card__s" data-i18n="float.k2">Só tu tens acesso</p>
+        </div>
+      </div>
+
+      <div class="float-card float-card--2" aria-hidden="true">
+        <span class="float-card__icon">⚡</span>
+        <div>
+          <p class="float-card__t" data-i18n="float.w1">Levantamento</p>
+          <p class="float-card__s" data-i18n="float.w2">Concluído em 8s</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="stats" aria-label="Números">
+  <div class="container stats__grid">
+    <div class="stat reveal">
+      <p class="stat__num"><span data-i18n="stats.upto">Até</span> <span data-count-to="40">0</span>%</p>
+      <p class="stat__lbl" data-i18n="stats.l1">rendimento anual estimado no plano mais ousado</p>
+    </div>
+    <div class="stat reveal" data-delay="1">
+      <p class="stat__num">$0</p>
+      <p class="stat__lbl" data-i18n="stats.l2">para abrir e manter a tua conta</p>
+    </div>
+    <div class="stat reveal" data-delay="2">
+      <p class="stat__num">24/7</p>
+      <p class="stat__lbl" data-i18n="stats.l3">a tua carteira acompanhada ao segundo</p>
+    </div>
+    <div class="stat reveal" data-delay="3">
+      <p class="stat__num"><span data-count-to="100">0</span>%</p>
+      <p class="stat__lbl" data-i18n="stats.l4">do teu dinheiro sob o teu controlo</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== MARQUEE ===================== -->
+<section class="marquee-wrap" aria-label="Redes">
+  <p class="marquee__label container" data-i18n="marquee.label">Funciona sobre as maiores redes do mundo, sem que precises de saber o que isso significa</p>
+  <div class="marquee">
+    <div class="marquee__track">
+      <span>Ethereum</span><span aria-hidden="true">·</span>
+      <span>Solana</span><span aria-hidden="true">·</span>
+      <span>Polygon</span><span aria-hidden="true">·</span>
+      <span>Base</span><span aria-hidden="true">·</span>
+      <span>Bitcoin</span><span aria-hidden="true">·</span>
+      <span>USDC</span><span aria-hidden="true">·</span>
+      <span>Arbitrum</span><span aria-hidden="true">·</span>
+      <span>Optimism</span><span aria-hidden="true">·</span>
+      <span>Ethereum</span><span aria-hidden="true">·</span>
+      <span>Solana</span><span aria-hidden="true">·</span>
+      <span>Polygon</span><span aria-hidden="true">·</span>
+      <span>Base</span><span aria-hidden="true">·</span>
+      <span>Bitcoin</span><span aria-hidden="true">·</span>
+      <span>USDC</span><span aria-hidden="true">·</span>
+      <span>Arbitrum</span><span aria-hidden="true">·</span>
+      <span>Optimism</span><span aria-hidden="true">·</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== LIBERDADE ===================== -->
+<section class="section" id="liberdade">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="free.tag">A diferença que muda tudo</p>
+      <h2 class="section__title" data-i18n="free.title">O teu dinheiro. <span class="text-gradient">As tuas regras.</span></h2>
+      <p class="section__sub" data-i18n="free.sub">
+        Um banco tradicional guarda o teu dinheiro e depois decide o que podes fazer com ele.
+        No DeFiMind acontece o contrário. O dinheiro fica sempre do teu lado e nós damos-te as
+        ferramentas para o pôr a crescer.
+      </p>
+    </header>
+
+    <div class="cards-4">
+      <article class="card reveal">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="8.5" cy="8.5" r="4.5" stroke="currentColor" stroke-width="1.7"/><path d="M11.8 11.8 20 20M17 17l2-2M14.5 14.5l2-2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="free.c1t">A chave é tua</h3>
+        <p data-i18n="free.c1d">Quando abres a conta é criada uma chave secreta que fica contigo. Nem a nossa equipa consegue chegar ao teu saldo. Não é uma promessa, é a forma como o sistema foi construído.</p>
+      </article>
+
+      <article class="card reveal" data-delay="1">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7.5a4 4 0 0 1 8 0V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M5 21 19 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+        </div>
+        <h3 data-i18n="free.c2t">Ninguém congela a tua conta</h3>
+        <p data-i18n="free.c2d">Não há gestor de conta a decidir se podes ou não levantar. Sem aprovações, sem justificações, sem chamadas para o balcão. O dinheiro é teu a qualquer hora do dia ou da noite.</p>
+      </article>
+
+      <article class="card reveal" data-delay="2">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M10 4H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M15 8.5 19.5 12 15 15.5M19 12H9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 data-i18n="free.c3t">Entras e sais quando quiseres</h3>
+        <p data-i18n="free.c3d">Sem fidelizações, sem penalizações por levantar cedo, sem papelada. O teu dinheiro está sempre a um toque de distância e chega à tua conta em segundos, não em dias úteis.</p>
+      </article>
+
+      <article class="card reveal" data-delay="3">
+        <div class="card__icon">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg>
+        </div>
+        <h3 data-i18n="free.c4t">Tudo à vista</h3>
+        <p data-i18n="free.c4d">Cada movimento fica registado de forma pública e permanente. Podes conferir para onde foi cada cêntimo, quando quiseres, sem depender da nossa palavra.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SEGURANÇA ===================== -->
+<section class="section section--alt" id="seguranca">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="sec.tag">Segurança</p>
+      <h2 class="section__title" data-i18n="sec.title">A proteção de um banco. <span class="text-gradient">Sem o banco.</span></h2>
+      <p class="section__sub" data-i18n="sec.sub">
+        Toda a gente faz a mesma pergunta: se o dinheiro é meu e está comigo, quem o protege?
+        A resposta são camadas de proteção construídas ao milímetro, do tipo que se encontra
+        num cofre de banco, com a diferença de que só tu tens a combinação.
+      </p>
+    </header>
+
+    <div class="cards-3">
+      <article class="card card--sec reveal">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2.8 4.5 6v6c0 4.9 3.2 8.3 7.5 9.3 4.3-1 7.5-4.4 7.5-9.3V6L12 2.8Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m8.8 12.2 2.2 2.2 4.3-4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="sec.c1t">Cofre encriptado</h3>
+        <p data-i18n="sec.c1d">Os teus dados e a tua chave viajam sempre encriptados de ponta a ponta, com o mesmo grau de proteção que a banca usa para mover milhões. Ninguém intercepta o que passa entre ti e a tua conta.</p>
+      </article>
+
+      <article class="card card--sec reveal" data-delay="1">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4.5" y="10" width="15" height="10" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="12" cy="15" r="1.4" fill="currentColor"/></svg></div>
+        <h3 data-i18n="sec.c2t">Verificação em dois passos</h3>
+        <p data-i18n="sec.c2d">A palavra-passe sozinha não abre nada. É sempre preciso um segundo código, gerado no teu telemóvel, que muda a cada trinta segundos e não serve a mais ninguém.</p>
+      </article>
+
+      <article class="card card--sec reveal" data-delay="2">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="sec.c3t">Confirmação em três etapas</h3>
+        <p data-i18n="sec.c3d">Movimentos grandes passam por verificação dupla e uma confirmação final tua. Nada sai da tua conta sem que digas expressamente que sim, nem por engano nem por pressa.</p>
+      </article>
+
+      <article class="card card--sec reveal" data-delay="3">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 17V9M9.3 17V5M14.7 17v-6M20 17V7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/><path d="M3 21h18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="sec.c4t">Limites definidos por ti</h3>
+        <p data-i18n="sec.c4d">Escolhes um tecto diário para movimentos. Mesmo que alguém chegasse ao teu telemóvel desbloqueado, não conseguiria esvaziar a conta de uma assentada.</p>
+      </article>
+
+      <article class="card card--sec reveal" data-delay="4">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 9h17M7.5 13.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="sec.c5t">Auditado por gente de fora</h3>
+        <p data-i18n="sec.c5d">Empresas independentes especializadas em segurança revêem o nosso código antes de cada atualização importante. Os relatórios são públicos e não tens de acreditar em nós.</p>
+      </article>
+
+      <article class="card card--sec reveal" data-delay="5">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 4 6.5v5.8c0 4.6 3.4 8.1 8 9.2 4.6-1.1 8-4.6 8-9.2V6.5L12 3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12.5h6M12 9.5v6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="sec.c6t">Recuperas sempre</h3>
+        <p data-i18n="sec.c6d">Perdeste o telemóvel? A tua frase de recuperação devolve-te a conta inteira em minutos, a partir de qualquer aparelho, sem preencher formulários nem esperar por ninguém.</p>
+      </article>
+    </div>
+
+    <p class="section__foot reveal" data-i18n="sec.foot">
+      Se o DeFiMind desaparecesse amanhã, o teu dinheiro continuaria acessível com a tua frase de recuperação.
+      <strong>Não somos o cofre. Somos a chave inglesa.</strong>
+    </p>
+  </div>
+</section>
+
+<!-- ===================== COMO FUNCIONA ===================== -->
+<section class="section" id="como-funciona">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="how.tag">Simples de propósito</p>
+      <h2 class="section__title" data-i18n="how.title">Três passos. E já está.</h2>
+      <p class="section__sub" data-i18n="how.sub">Não precisas de saber nada sobre tecnologia. Se sabes usar a aplicação do teu banco, sabes usar o DeFiMind.</p>
+    </header>
+
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step__n">01</span>
+        <h3 data-i18n="how.s1t">Cria a tua conta</h3>
+        <p data-i18n="how.s1d">Demora menos de dois minutos e só precisas de um email. Mostramos-te uma frase de recuperação: guarda-a bem, é a chave de casa e ninguém ta pode pedir.</p>
+      </li>
+      <li class="step reveal" data-delay="1">
+        <span class="step__n">02</span>
+        <h3 data-i18n="how.s2t">Coloca dinheiro</h3>
+        <p data-i18n="how.s2d">Por cartão, transferência bancária ou o método de pagamento que já usas no teu país. Podes começar com o equivalente a 25 dólares e não há comissão de entrada.</p>
+      </li>
+      <li class="step reveal" data-delay="2">
+        <span class="step__n">03</span>
+        <h3 data-i18n="how.s3t">Escolhe o teu ritmo</h3>
+        <p data-i18n="how.s3d">Três planos, três níveis de risco. A partir daí o DeFiMind trata de tudo, todos os dias, enquanto tu vives a tua vida.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================== MOEDA ===================== -->
+<section class="section section--alt" id="moeda">
+  <div class="container currency">
+    <div class="currency__copy reveal">
+      <p class="tag" data-i18n="cur.tag">Em qualquer lugar do mundo</p>
+      <h2 class="section__title" data-i18n="cur.title">O teu dinheiro, <span class="text-gradient">na tua moeda.</span></h2>
+      <p class="section__sub section__sub--left" data-i18n="cur.sub">
+        Estás no Brasil? Vês reais. Nos Estados Unidos? Dólares. Na Europa? Euros.
+        O DeFiMind mostra tudo na moeda que usas no dia a dia e faz as contas por ti,
+        para nunca teres de converter nada de cabeça.
+      </p>
+
+      <ul class="checks">
+        <li data-i18n="cur.k1">O saldo, os ganhos e os custos aparecem sempre na tua moeda</li>
+        <li data-i18n="cur.k2">Mudas de moeda quando quiseres, sem perder histórico</li>
+        <li data-i18n="cur.k3">Entras e sais pelos métodos de pagamento do teu país</li>
+        <li data-i18n="cur.k4">Sem taxas de câmbio escondidas nem margens disfarçadas</li>
+      </ul>
+    </div>
+
+    <div class="currency__visual reveal" data-delay="1">
+      <div class="cur-grid">
+        <div class="cur">
+          <span class="cur__sym" aria-hidden="true">$</span>
+          <p class="cur__country" data-i18n="cur.us">Estados Unidos</p>
+          <p class="cur__val">$4,287.00</p>
+          <p class="cur__code">USD</p>
+        </div>
+        <div class="cur">
+          <span class="cur__sym" aria-hidden="true">R$</span>
+          <p class="cur__country" data-i18n="cur.br">Brasil</p>
+          <p class="cur__val">R$ 23.164,00</p>
+          <p class="cur__code">BRL</p>
+        </div>
+        <div class="cur">
+          <span class="cur__sym" aria-hidden="true">€</span>
+          <p class="cur__country" data-i18n="cur.eu">Europa</p>
+          <p class="cur__val">3 958,00 €</p>
+          <p class="cur__code">EUR</p>
+        </div>
+        <div class="cur">
+          <span class="cur__sym" aria-hidden="true">£</span>
+          <p class="cur__country" data-i18n="cur.gb">Reino Unido</p>
+          <p class="cur__val">£3,387.00</p>
+          <p class="cur__code">GBP</p>
+        </div>
+      </div>
+      <p class="cur__note" data-i18n="cur.note">O mesmo saldo, visto de quatro sítios diferentes do mundo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PLANOS ===================== -->
+<section class="section" id="planos">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="plans.tag">Poupança que trabalha</p>
+      <h2 class="section__title" data-i18n="plans.title">Escolhe quanto <span class="text-gradient">risco</span> queres correr.</h2>
+      <p class="section__sub" data-i18n="plans.sub">Três planos claros. Sem letras pequenas, sem produtos complicados que ninguém percebe. Mudas de plano quando quiseres.</p>
+    </header>
+
+    <div class="plans">
+      <article class="plan reveal">
+        <header class="plan__head">
+          <span class="plan__badge plan__badge--safe" data-i18n="plans.r1">Risco baixo</span>
+          <h3 class="plan__name" data-i18n="plans.n1">Seguro</h3>
+          <p class="plan__rate"><span data-count-to="9">0</span><small data-i18n="plans.year">% ao ano</small></p>
+          <p class="plan__tag" data-i18n="plans.t1">Para quem quer dormir descansado.</p>
+        </header>
+        <ul class="plan__list">
+          <li data-i18n="plans.a1">Oscilações muito reduzidas</li>
+          <li data-i18n="plans.daily">Rendimento creditado todos os dias</li>
+          <li data-i18n="plans.min">A partir de $25 ou equivalente</li>
+          <li data-i18n="plans.any">Levantas a qualquer momento</li>
+        </ul>
+        <a class="btn btn--secondary btn--block" href="#lista" data-i18n="plans.pick">Quero este plano</a>
+      </article>
+
+      <article class="plan plan--featured reveal" data-delay="1">
+        <span class="plan__ribbon" data-i18n="plans.popular">Mais escolhido</span>
+        <header class="plan__head">
+          <span class="plan__badge plan__badge--mid" data-i18n="plans.r2">Risco médio</span>
+          <h3 class="plan__name" data-i18n="plans.n2">Equilibrado</h3>
+          <p class="plan__rate"><span data-count-to="24">0</span><small data-i18n="plans.year">% ao ano</small></p>
+          <p class="plan__tag" data-i18n="plans.t2">O ponto certo entre calma e crescimento.</p>
+        </header>
+        <ul class="plan__list">
+          <li data-i18n="plans.a2">Reequilíbrio automático da carteira</li>
+          <li data-i18n="plans.daily">Rendimento creditado todos os dias</li>
+          <li data-i18n="plans.min">A partir de $25 ou equivalente</li>
+          <li data-i18n="plans.any">Levantas a qualquer momento</li>
+        </ul>
+        <a class="btn btn--primary btn--block" href="#lista" data-i18n="plans.pick">Quero este plano</a>
+      </article>
+
+      <article class="plan reveal" data-delay="2">
+        <header class="plan__head">
+          <span class="plan__badge plan__badge--bold" data-i18n="plans.r3">Risco alto</span>
+          <h3 class="plan__name" data-i18n="plans.n3">Ousado</h3>
+          <p class="plan__rate"><span data-count-to="40">0</span><small data-i18n="plans.year">% ao ano</small></p>
+          <p class="plan__tag" data-i18n="plans.t3">Para quem aceita subidas e descidas.</p>
+        </header>
+        <ul class="plan__list">
+          <li data-i18n="plans.a3">Maior exposição a oportunidades</li>
+          <li data-i18n="plans.daily">Rendimento creditado todos os dias</li>
+          <li data-i18n="plans.min">A partir de $25 ou equivalente</li>
+          <li data-i18n="plans.any">Levantas a qualquer momento</li>
+        </ul>
+        <a class="btn btn--secondary btn--block" href="#lista" data-i18n="plans.pick">Quero este plano</a>
+      </article>
+    </div>
+
+    <p class="disclaimer reveal" data-i18n="plans.risk">
+      <strong>Aviso importante:</strong> as percentagens apresentadas são estimativas anuais baseadas em desempenho passado
+      e <strong>não são rendimentos garantidos</strong>. O valor investido pode subir ou descer e podes receber menos do que colocaste,
+      incluindo perder tudo. Quanto maior o rendimento esperado, maior o risco de perda: os planos com percentagens mais altas
+      são também os que mais podem cair. Investe apenas o que estás disposto a arriscar.
+    </p>
+
+    <div class="calc reveal">
+      <div class="calc__left">
+        <p class="tag" data-i18n="calc.tag">Simulador</p>
+        <h3 class="calc__title" data-i18n="calc.title">Quanto poderia render?</h3>
+        <p class="calc__sub" data-i18n="calc.sub">Mexe nos valores e vê a estimativa. Sem compromisso e sem dar dados nenhuns.</p>
+
+        <div class="field">
+          <div class="field__top">
+            <label for="calcAmount" data-i18n="calc.amount">Valor inicial</label>
+            <output id="calcAmountOut" for="calcAmount">$1,000</output>
+          </div>
+          <input type="range" id="calcAmount" min="25" max="25000" step="25" value="1000">
+        </div>
+
+        <div class="field">
+          <div class="field__top">
+            <label for="calcYears" data-i18n="calc.during">Durante</label>
+            <output id="calcYearsOut" for="calcYears">5 anos</output>
+          </div>
+          <input type="range" id="calcYears" min="1" max="20" step="1" value="5">
+        </div>
+
+        <div class="field">
+          <span class="field__lbl" data-i18n="calc.plan">Plano</span>
+          <div class="segmented" role="radiogroup" aria-label="Plano" data-i18n-attr="aria-label:calc.plan">
+            <button type="button" role="radio" aria-checked="false" data-rate="9" data-i18n="plans.n1">Seguro</button>
+            <button type="button" role="radio" aria-checked="true" class="is-active" data-rate="24" data-i18n="plans.n2">Equilibrado</button>
+            <button type="button" role="radio" aria-checked="false" data-rate="40" data-i18n="plans.n3">Ousado</button>
+          </div>
+        </div>
+
+        <div class="field field--last">
+          <span class="field__lbl" data-i18n="calc.currency">Moeda</span>
+          <div class="segmented segmented--4" role="radiogroup" aria-label="Moeda" id="curPicker" data-i18n-attr="aria-label:calc.currency">
+            <button type="button" role="radio" aria-checked="true" class="is-active" data-cur="USD">USD</button>
+            <button type="button" role="radio" aria-checked="false" data-cur="EUR">EUR</button>
+            <button type="button" role="radio" aria-checked="false" data-cur="BRL">BRL</button>
+            <button type="button" role="radio" aria-checked="false" data-cur="GBP">GBP</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc__right">
+        <p class="calc__resultLbl"><span data-i18n="calc.resultA">Valor estimado ao fim de</span> <span id="calcYearsLbl">5</span> <span data-i18n="calc.resultB">anos</span></p>
+        <p class="calc__result" id="calcResult">$2,932</p>
+        <div class="calc__split">
+          <div>
+            <p class="calc__splitLbl" data-i18n="calc.put">Colocaste</p>
+            <p class="calc__splitVal" id="calcPrincipal">$1,000</p>
+          </div>
+          <div>
+            <p class="calc__splitLbl" data-i18n="calc.earned">Rendeu</p>
+            <p class="calc__splitVal calc__splitVal--pos" id="calcGain">+$1,932</p>
+          </div>
+        </div>
+        <div class="calc__bar" aria-hidden="true">
+          <i class="calc__barFill" id="calcBar" style="width:66%"></i>
+        </div>
+        <p class="calc__note" data-i18n="calc.note">Estimativa com juros compostos, apenas para efeitos ilustrativos. Não constitui aconselhamento financeiro nem garantia de rendimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== NEUREX ===================== -->
+<section class="section section--alt" id="neurex">
+  <div class="container neurex">
+    <div class="neurex__copy reveal">
+      <p class="tag" data-i18n="nx.tag">Conhece o Neurex</p>
+      <h2 class="section__title" data-i18n="nx.title">Um consultor financeiro só teu. <span class="text-gradient">Sem custar nada.</span></h2>
+      <p class="section__sub section__sub--left" data-i18n="nx.sub">
+        O Neurex é a inteligência do DeFiMind. Acompanha a tua carteira 24 horas por dia,
+        ajusta o que é preciso ajustar e explica tudo como se estivesses a falar com um amigo
+        que percebe do assunto.
+      </p>
+
+      <ul class="checks">
+        <li data-i18n="nx.k1">Pergunta o que quiseres, na tua língua e à tua maneira</li>
+        <li data-i18n="nx.k2">Explica cada decisão em palavras simples, sem termos técnicos</li>
+        <li data-i18n="nx.k3">Vigia o mercado enquanto dormes e aproveita os melhores momentos</li>
+        <li data-i18n="nx.k4">Pede-te sempre autorização antes de qualquer movimento grande</li>
+        <li data-i18n="nx.k5">Poupa-te dinheiro escolhendo as alturas mais baratas para agir</li>
+      </ul>
+
+      <a class="btn btn--primary" href="#lista" data-i18n="nx.cta">Quero conhecer o Neurex</a>
+    </div>
+
+    <div class="neurex__chat reveal" data-delay="1">
+      <div class="chat">
+        <div class="chat__head">
+          <span class="chat__avatar" aria-hidden="true">N</span>
+          <div>
+            <p class="chat__name">Neurex</p>
+            <p class="chat__status"><span class="dot dot--live" aria-hidden="true"></span><span data-i18n="nx.online">sempre disponível</span></p>
+          </div>
+        </div>
+
+        <div class="chat__body">
+          <div class="bubble bubble--user" data-i18n="nx.m1">Tenho $500 parados. Vale a pena investir?</div>
+          <div class="bubble bubble--bot" data-i18n="nx.m2">
+            Vale, sim. Mas primeiro deixa-me perguntar uma coisa: precisas deste dinheiro nos próximos 12 meses?
+          </div>
+          <div class="bubble bubble--user" data-i18n="nx.m3">Não, é dinheiro que tenho de lado.</div>
+          <div class="bubble bubble--bot" data-i18n="nx.m4">
+            Perfeito. Nesse caso sugeria o plano <strong>Equilibrado</strong>. Pensa nisto como plantar uma árvore:
+            quanto mais tempo a deixares crescer, mais sombra te dá. Queres que te mostre a simulação?
+          </div>
+          <div class="bubble bubble--typing" aria-hidden="true"><i></i><i></i><i></i></div>
+        </div>
+
+        <div class="chat__input" aria-hidden="true">
+          <span data-i18n="nx.placeholder">Escreve a tua pergunta…</span>
+          <button type="button" tabindex="-1" aria-label="Enviar">
+            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10h13M11 5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CARTÃO ===================== -->
+<section class="section" id="cartao">
+  <div class="container payments">
+    <div class="payments__visual">
+      <div class="ccard-stage" id="ccardStage">
+        <div class="ccard-surface" aria-hidden="true"></div>
+        <div class="ccard-shadow" aria-hidden="true"></div>
+        <div class="ccard">
+          <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
+            <g fill="none" stroke="rgba(208,213,221,.32)" stroke-width=".9">
+              <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
+              <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
+            </g>
+            <rect x="12.5" y="12.5" width="375" height="227" rx="11"
+                  fill="none" stroke="rgba(208,213,221,.2)" stroke-width="2.4" stroke-dasharray="1 3.4"/>
+            <g fill="rgba(208,213,221,.4)">
+              <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
+              <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
+              <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
+              <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
+            </g>
+          </svg>
+
+          <p class="ccard__brand">DEFIMIND</p>
+          <div class="ccard__chip" aria-hidden="true"></div>
+          <p class="ccard__digits">7390</p>
+
+          <div class="ccard__medallion">
+            <img src="assets/img/logo.png" alt="" width="120" height="120">
+          </div>
+
+          <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
+          <p class="ccard__since">26</p>
+
+          <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+
+          <div class="ccard__texture" aria-hidden="true"></div>
+          <div class="ccard__sheen" aria-hidden="true"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="payments__copy reveal" data-delay="1">
+      <p class="tag" data-i18n="card.tag">Cartão DeFiMind Obsidian</p>
+      <h2 class="section__title" data-i18n="card.title">Preto. Discreto. <span class="text-gradient">Aceite em todo o lado.</span></h2>
+      <p class="section__sub section__sub--left" data-i18n="card.sub">
+        As tuas poupanças continuam a render até ao segundo em que pagas. Quando precisas delas,
+        gastas como gastarias com qualquer outro cartão, do supermercado à outra ponta do mundo.
+      </p>
+
+      <div class="mini-grid">
+        <div class="mini">
+          <span class="mini__icon" aria-hidden="true">🖤</span>
+          <p class="mini__t" data-i18n="card.m1t">Virtual e físico</p>
+          <p class="mini__s" data-i18n="card.m1d">O virtual sai na hora. O físico chega a casa em metal.</p>
+        </div>
+        <div class="mini">
+          <span class="mini__icon" aria-hidden="true">🌍</span>
+          <p class="mini__t" data-i18n="card.m2t">Sem fronteiras</p>
+          <p class="mini__s" data-i18n="card.m2d">Funciona em qualquer país e em qualquer loja que aceite cartão.</p>
+        </div>
+        <div class="mini">
+          <span class="mini__icon" aria-hidden="true">💱</span>
+          <p class="mini__t" data-i18n="card.m3t">Câmbio honesto</p>
+          <p class="mini__s" data-i18n="card.m3d">Pagas ao câmbio real, sem margens escondidas na conversão.</p>
+        </div>
+        <div class="mini">
+          <span class="mini__icon" aria-hidden="true">🎁</span>
+          <p class="mini__t" data-i18n="card.m4t">Devolvemos-te parte</p>
+          <p class="mini__s" data-i18n="card.m4d">Cada compra devolve-te uma fatia em recompensas DMIND.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COMPARAÇÃO ===================== -->
+<section class="section section--alt" id="comparacao">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="cmp.tag">Lado a lado</p>
+      <h2 class="section__title" data-i18n="cmp.title">O que muda em relação ao teu banco.</h2>
+    </header>
+
+    <div class="table-wrap reveal">
+      <table class="compare">
+        <caption class="sr-only" data-i18n="cmp.caption">Comparação entre um banco tradicional e o DeFiMind</caption>
+        <thead>
+          <tr>
+            <th scope="col"><span class="sr-only" data-i18n="cmp.feature">Característica</span></th>
+            <th scope="col" data-i18n="cmp.bank">Banco tradicional</th>
+            <th scope="col" class="compare__us">DeFiMind</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row" data-i18n="cmp.r1">Quem guarda o teu dinheiro</th>
+            <td data-i18n="cmp.r1a">O banco</td>
+            <td class="compare__us"><strong data-i18n="cmp.r1b">Tu, e só tu</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r2">Podem bloquear a conta</th>
+            <td data-i18n="cmp.r2a">Sim, sem aviso</td>
+            <td class="compare__us"><strong data-i18n="cmp.r2b">Não é tecnicamente possível</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r3">Rendimento dos depósitos</th>
+            <td data-i18n="cmp.r3a">Perto de zero</td>
+            <td class="compare__us"><strong data-i18n="cmp.r3b">9% a 40% ao ano (estimado)</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r4">Tempo de levantamento</th>
+            <td data-i18n="cmp.r4a">1 a 3 dias úteis</td>
+            <td class="compare__us"><strong data-i18n="cmp.r4b">Segundos, a qualquer hora</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r5">Custo de manutenção</th>
+            <td data-i18n="cmp.r5a">Comissões mensais</td>
+            <td class="compare__us"><strong>$0</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r6">Onde funciona</th>
+            <td data-i18n="cmp.r6a">No país onde abriste</td>
+            <td class="compare__us"><strong data-i18n="cmp.r6b">Em qualquer lugar do mundo</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r7">Moeda que vês</th>
+            <td data-i18n="cmp.r7a">A do banco</td>
+            <td class="compare__us"><strong data-i18n="cmp.r7b">A que tu escolheres</strong></td>
+          </tr>
+          <tr>
+            <th scope="row" data-i18n="cmp.r8">Quem decide o futuro do serviço</th>
+            <td data-i18n="cmp.r8a">Accionistas</td>
+            <td class="compare__us"><strong data-i18n="cmp.r8b">Quem usa</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="table-note reveal" data-i18n="cmp.note">O DeFiMind não é um banco licenciado nem um depósito garantido. É uma ferramenta que te dá acesso directo ao teu próprio dinheiro, com tudo o que isso tem de bom e de exigente.</p>
+  </div>
+</section>
+
+<!-- ===================== COMUNIDADE ===================== -->
+<section class="section" id="comunidade">
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="comm.tag">Comunidade</p>
+      <h2 class="section__title" data-i18n="comm.title">Quem usa, <span class="text-gradient">decide.</span></h2>
+      <p class="section__sub" data-i18n="comm.sub">Não temos accionistas a exigir lucro trimestral. Temos pessoas, e são elas que dizem para onde vai o DeFiMind.</p>
+    </header>
+
+    <div class="cards-3">
+      <article class="card reveal">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 3.5 2.6 5.4 5.9.8-4.3 4.1 1.1 5.8L12 16.9l-5.3 2.7 1.1-5.8-4.3-4.1 5.9-.8L12 3.5Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3 data-i18n="comm.c1t">Ganhas por usares</h3>
+        <p data-i18n="comm.c1d">Depositar, poupar, convidar um amigo, manter a sequência de dias. Tudo conta e tudo te devolve recompensas em DMIND.</p>
+      </article>
+
+      <article class="card reveal" data-delay="1">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 20V10M12 20V4M18 20v-7" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="comm.c2t">Vantagens a sério</h3>
+        <p data-i18n="comm.c2d">Quem tem DMIND paga menos comissões, recebe mais em cada compra e entra primeiro nas novidades. Não é um brinde, é desconto real.</p>
+      </article>
+
+      <article class="card reveal" data-delay="2">
+        <div class="card__icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.7"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><path d="M16.5 6.2a3.2 3.2 0 0 1 0 5.6M18.5 19.5c0-2-.8-3.7-2.2-4.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3 data-i18n="comm.c3t">Votas no que vem a seguir</h3>
+        <p data-i18n="comm.c3d">As grandes decisões, das novas funcionalidades às comissões, são votadas por quem usa a plataforma. Um voto por pessoa que está dentro.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="section section--alt" id="perguntas">
+  <div class="container container--narrow">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="faq.tag">Perguntas</p>
+      <h2 class="section__title" data-i18n="faq.title">O que toda a gente pergunta.</h2>
+    </header>
+
+    <div class="faq reveal">
+      <details class="faq__item">
+        <summary data-i18n="faq.q1">Se não guardam o meu dinheiro, onde é que ele está?</summary>
+        <div class="faq__body"><p data-i18n="faq.a1">Está numa carteira que pertence só a ti, criada no momento em que abres a conta. Nós conseguimos mostrar-te o saldo e sugerir-te o que fazer, mas não conseguimos mexer nele. É a diferença entre o teu contabilista e o teu banco: um aconselha, o outro guarda.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q2">Isso quer dizer que é menos seguro do que um banco?</summary>
+        <div class="faq__body"><p data-i18n="faq.a2">Pelo contrário. Num banco a tua segurança depende de o banco não falhar. Aqui a proteção está do teu lado: encriptação ponta a ponta, verificação em dois passos, confirmação tripla em movimentos grandes e limites diários definidos por ti. Nós não podemos perder o teu dinheiro porque nunca chegamos a tê-lo.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q3">E se eu perder o telemóvel ou esquecer a palavra-passe?</summary>
+        <div class="faq__body"><p data-i18n="faq.a3">Recuperas tudo com a frase de recuperação que te mostramos no início. Por isso insistimos tanto para a guardares num sítio seguro e fora do telemóvel. É a única coisa que ninguém te pode devolver se a perderes.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q4">Em que países funciona?</summary>
+        <div class="faq__body"><p data-i18n="faq.a4">Em praticamente todos. O DeFiMind não depende do sistema bancário de nenhum país em particular, por isso funciona onde quer que tenhas ligação à internet. Os métodos para pôr e tirar dinheiro é que variam conforme o sítio onde estás.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q5">Em que moeda vejo o meu saldo?</summary>
+        <div class="faq__body"><p data-i18n="faq.a5">Na tua. Se estiveres no Brasil vês reais, nos Estados Unidos vês dólares, na Europa vês euros. Podes trocar de moeda a qualquer momento nas definições e o histórico acompanha a mudança. Por baixo está tudo cotado em dólar, que é a referência internacional.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q6">Posso perder dinheiro?</summary>
+        <div class="faq__body"><p data-i18n="faq.a6">Sim. Isto não é um depósito a prazo e não há capital garantido. Os valores que mostramos são estimativas com base no passado e o mercado pode descer. O plano Seguro foi desenhado para oscilar muito pouco, mas nenhum plano elimina o risco por completo. Investe apenas o que podes deixar a trabalhar sem precisar dele.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q7">Quanto custa?</summary>
+        <div class="faq__body"><p data-i18n="faq.a7">Abrir e manter a conta é gratuito. Não há mensalidade nem comissão de entrada ou de saída. Cobramos 1,3% em cada movimento de compra, venda ou investimento e está tudo à vista antes de confirmares seja o que for.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q8">Preciso de perceber alguma coisa de criptomoedas?</summary>
+        <div class="faq__body"><p data-i18n="faq.a8">Não. Essa é precisamente a razão de existirmos. Vês o saldo na tua moeda, vês quanto rendeu e carregas em três botões: depositar, investir, levantar. Toda a parte complicada acontece por baixo, sem te incomodar.</p></div>
+      </details>
+
+      <details class="faq__item">
+        <summary data-i18n="faq.q9">Como ganham dinheiro se é tudo gratuito?</summary>
+        <div class="faq__body"><p data-i18n="faq.a9">Com a comissão de 1,3% nos movimentos e com o cartão. Mais nada. Não vendemos os teus dados, não temos publicidade escondida e não ganhamos por te fazer mexer na carteira sem necessidade.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CTA FINAL ===================== -->
+<section class="cta" id="lista">
+  <div class="cta__bg" aria-hidden="true"><div class="orb orb--cta"></div></div>
+  <div class="container container--narrow cta__inner">
+    <h2 class="cta__title reveal" data-i18n="cta.title">Está na hora de o teu dinheiro <span class="text-gradient">trabalhar para ti.</span></h2>
+    <p class="cta__sub reveal" data-delay="1" data-i18n="cta.sub">Entra na lista de espera e sê dos primeiros a abrir conta. Sem compromisso e sem spam, prometido.</p>
+
+    <form class="waitlist reveal" data-delay="2" id="waitlistForm" novalidate>
+      <div class="waitlist__row">
+        <label class="sr-only" for="email" data-i18n="cta.label">O teu email</label>
+        <input type="email" id="email" name="email" placeholder="o.teu@email.com" autocomplete="email" required
+               data-i18n-attr="placeholder:cta.placeholder">
+        <button class="btn btn--primary btn--lg" type="submit" data-i18n="cta.button">Quero entrar</button>
+      </div>
+      <p class="waitlist__msg" id="waitlistMsg" role="status" aria-live="polite"></p>
+      <p class="waitlist__fine" data-i18n="cta.fine">Ao entrares na lista aceitas receber novidades sobre o lançamento. Sais quando quiseres, com um clique.</p>
+    </form>
+
+    <ul class="cta__badges reveal" data-delay="3">
+      <li data-i18n="cta.b1">🌍 Em todo o mundo</li>
+      <li data-i18n="cta.b2">🔐 Só tu tens a chave</li>
+      <li data-i18n="cta.b3">🛡️ Proteção de nível bancário</li>
+      <li data-i18n="cta.b4">💬 Suporte 24/7</li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="#top" aria-label="DeFiMind">
+          <img class="brand__mark" src="assets/img/logo.png" alt="" width="42" height="42">
+          <span class="brand__name">DeFi<span>Mind</span></span>
+        </a>
+        <p class="footer__tagline" data-i18n="foot.tagline">O banco que nunca toca no teu dinheiro. Disponível onde quer que estejas, na moeda que usas.</p>
+        <div class="footer__social">
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.5 3h3l-6.6 7.5L21.8 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.5 3h6.2l4.3 5.6L17.5 3Zm-1.1 16.2h1.7L7.7 4.7H5.9l10.5 14.5Z"/></svg></a>
+          <a href="#" aria-label="Discord"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M19.3 5.6A16 16 0 0 0 15.4 4.4l-.2.4a12 12 0 0 0-6.4 0l-.2-.4A16 16 0 0 0 4.7 5.6C2.2 9.3 1.5 12.9 1.9 16.4a16 16 0 0 0 4.8 2.4l.9-1.5c-.5-.2-1-.5-1.5-.8l.4-.3a11.4 11.4 0 0 0 9.8 0l.4.3c-.5.3-1 .6-1.5.8l.9 1.5a16 16 0 0 0 4.8-2.4c.5-4-.7-7.6-2.6-10.8ZM8.5 14.3c-.9 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.7.8 1.7 1.9-.8 1.9-1.7 1.9Zm7 0c-.9 0-1.7-.9-1.7-1.9s.8-1.9 1.7-1.9 1.7.8 1.7 1.9-.8 1.9-1.7 1.9Z"/></svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.9 8.5v11H3.4v-11h3.5Zm.2-3.4c0 1-.8 1.8-2 1.8s-1.9-.8-1.9-1.8.8-1.8 2-1.8 1.9.8 1.9 1.8Zm13.5 8v6.4h-3.5v-6c0-1.5-.5-2.5-1.9-2.5-1 0-1.6.7-1.9 1.4l-.1 1v6.1H9.7s.1-10 0-11h3.5v1.6c.5-.7 1.3-1.8 3.2-1.8 2.4 0 4.2 1.5 4.2 4.8Z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 2 .2 2.7.5.7.3 1.3.7 1.9 1.3.6.6 1 1.2 1.3 1.9.3.7.5 1.5.5 2.7.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 2-.5 2.7-.3.7-.7 1.3-1.3 1.9-.6.6-1.2 1-1.9 1.3-.7.3-1.5.5-2.7.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-2-.2-2.7-.5-.7-.3-1.3-.7-1.9-1.3-.6-.6-1-1.2-1.3-1.9-.3-.7-.5-1.5-.5-2.7C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-2 .5-2.7.3-.7.7-1.3 1.3-1.9.6-.6 1.2-1 1.9-1.3.7-.3 1.5-.5 2.7-.5C9.9 2.2 10.3 2.2 12 2.2Zm0 2c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1Zm0 3.4a5.4 5.4 0 1 1 0 10.8 5.4 5.4 0 0 1 0-10.8Zm0 8.9a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm6.9-9.1a1.3 1.3 0 1 1-2.6 0 1.3 1.3 0 0 1 2.6 0Z"/></svg></a>
+        </div>
+      </div>
+
+      <nav class="footer__col" aria-label="Produto" data-i18n-attr="aria-label:foot.product">
+        <h3 data-i18n="foot.product">Produto</h3>
+        <a href="#como-funciona" data-i18n="nav.how">Como funciona</a>
+        <a href="#planos" data-i18n="nav.plans">Planos</a>
+        <a href="#neurex" data-i18n="nav.neurex">Neurex</a>
+        <a href="#cartao" data-i18n="foot.card">Cartão</a>
+        <a href="#moeda" data-i18n="foot.currencies">Moedas</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Empresa" data-i18n-attr="aria-label:foot.company">
+        <h3 data-i18n="foot.company">Empresa</h3>
+        <a href="#liberdade" data-i18n="foot.about">Sobre nós</a>
+        <a href="#seguranca" data-i18n="nav.security">Segurança</a>
+        <a href="#perguntas" data-i18n="foot.faq">Perguntas frequentes</a>
+        <a href="#comunidade" data-i18n="comm.tag">Comunidade</a>
+        <a href="#lista" data-i18n="nav.cta">Lista de espera</a>
+      </nav>
+
+      <nav class="footer__col" aria-label="Legal" data-i18n-attr="aria-label:foot.legal">
+        <h3 data-i18n="foot.legal">Legal</h3>
+        <a href="#" data-i18n="foot.terms">Termos e condições</a>
+        <a href="#" data-i18n="foot.privacy">Política de privacidade</a>
+        <a href="#" data-i18n="foot.cookies">Política de cookies</a>
+        <a href="#" data-i18n="foot.risk">Aviso de risco</a>
+      </nav>
+    </div>
+
+    <div class="footer__risk">
+      <p data-i18n="foot.riskText"><strong>Aviso de risco.</strong> Investir em activos digitais envolve risco elevado, incluindo a perda total do capital investido.
+      As percentagens de rendimento apresentadas neste site são estimativas baseadas em desempenho histórico, não constituem
+      qualquer garantia e podem não repetir-se. O DeFiMind não é uma instituição de crédito, não aceita depósitos e os valores
+      colocados na plataforma não estão cobertos por qualquer fundo de garantia de depósitos. Nada neste site constitui
+      aconselhamento financeiro, fiscal ou de investimento personalizado. Antes de investir, avalia a tua situação e, se tiveres
+      dúvidas, procura um profissional habilitado. A disponibilidade do serviço e dos métodos de pagamento varia consoante o país.</p>
+    </div>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>2026</span> DeFiMind. <span data-i18n="foot.rights">Todos os direitos reservados.</span></p>
+      <p data-i18n="foot.worldwide">Disponível em todo o mundo</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
