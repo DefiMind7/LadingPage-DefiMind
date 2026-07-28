@@ -607,81 +607,215 @@
   </div>
 </section>
 
-<!-- ===================== CARTÃO ===================== -->
+<!-- ===================== CARTÕES ===================== -->
 <section class="section" id="cartao">
-  <div class="container payments">
-    <div class="payments__visual">
-      <div class="ccard-stage" id="ccardStage">
-        <div class="ccard-surface" aria-hidden="true"></div>
-        <div class="ccard-shadow" aria-hidden="true"></div>
-        <div class="ccard">
-          <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
-            <g fill="none" stroke="rgba(208,213,221,.32)" stroke-width=".9">
-              <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
-              <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
-            </g>
-            <rect x="12.5" y="12.5" width="375" height="227" rx="11"
-                  fill="none" stroke="rgba(208,213,221,.2)" stroke-width="2.4" stroke-dasharray="1 3.4"/>
-            <g fill="rgba(208,213,221,.4)">
-              <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
-              <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
-              <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
-              <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
-            </g>
-          </svg>
+  <div class="container">
+    <header class="section__head reveal">
+      <p class="tag" data-i18n="card.tag">Cartões DeFiMind</p>
+      <h2 class="section__title" data-i18n="card.title">Quatro acabamentos. <span class="text-gradient">Uma só conta.</span></h2>
+      <p class="section__sub" data-i18n="card.sub">
+        Todos em metal, todos com a mesma conta por trás. As tuas poupanças continuam a render
+        até ao segundo em que pagas, do supermercado à outra ponta do mundo.
+      </p>
+    </header>
 
-          <p class="ccard__brand">DEFIMIND</p>
-          <div class="ccard__chip" aria-hidden="true"></div>
-          <p class="ccard__digits">7390</p>
+    <div class="card-line">
+      <div class="card-item reveal">
+        <div class="ccard-stage" style="--drop-delay:0s">
+          <div class="ccard-shadow" aria-hidden="true"></div>
+          <div class="ccard ccard--prata">
+            <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width=".9">
+                <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
+                <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
+              </g>
+              <rect x="12.5" y="12.5" width="375" height="227" rx="11" fill="none"
+                    stroke="currentColor" stroke-opacity=".6" stroke-width="2.4" stroke-dasharray="1 3.4"/>
+              <g fill="currentColor">
+                <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
+                <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
+                <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
+                <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
+              </g>
+            </svg>
 
-          <div class="ccard__medallion">
-            <img src="assets/img/logo.png" alt="" width="120" height="120">
+            <p class="ccard__brand">DEFIMIND</p>
+            <div class="ccard__chip" aria-hidden="true"></div>
+            <p class="ccard__digits">4417</p>
+
+            <div class="ccard__medallion">
+              <img src="assets/img/logo.png" alt="" width="120" height="120">
+            </div>
+
+            <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
+            <p class="ccard__since">26</p>
+            <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+
+            <div class="ccard__spec" aria-hidden="true"></div>
+            <div class="ccard__texture" aria-hidden="true"></div>
+            <div class="ccard__sheen" aria-hidden="true"></div>
           </div>
+        </div>
+        <div class="card-item__meta">
+          <p class="card-item__name" data-i18n="card.f1n">Prata</p>
+          <p class="card-item__desc" data-i18n="card.f1d">Aço escovado, sóbrio e leve. O primeiro da linha.</p>
+        </div>
+      </div>
 
-          <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
-          <p class="ccard__since">26</p>
+      <div class="card-item reveal">
+        <div class="ccard-stage" style="--drop-delay:.12s">
+          <div class="ccard-shadow" aria-hidden="true"></div>
+          <div class="ccard ccard--ouro">
+            <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width=".9">
+                <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
+                <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
+              </g>
+              <rect x="12.5" y="12.5" width="375" height="227" rx="11" fill="none"
+                    stroke="currentColor" stroke-opacity=".6" stroke-width="2.4" stroke-dasharray="1 3.4"/>
+              <g fill="currentColor">
+                <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
+                <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
+                <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
+                <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
+              </g>
+            </svg>
 
-          <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+            <p class="ccard__brand">DEFIMIND</p>
+            <div class="ccard__chip" aria-hidden="true"></div>
+            <p class="ccard__digits">6208</p>
 
-          <div class="ccard__texture" aria-hidden="true"></div>
-          <div class="ccard__sheen" aria-hidden="true"></div>
+            <div class="ccard__medallion">
+              <img src="assets/img/logo.png" alt="" width="120" height="120">
+            </div>
+
+            <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
+            <p class="ccard__since">26</p>
+            <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+
+            <div class="ccard__spec" aria-hidden="true"></div>
+            <div class="ccard__texture" aria-hidden="true"></div>
+            <div class="ccard__sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="card-item__meta">
+          <p class="card-item__name" data-i18n="card.f2n">Ouro</p>
+          <p class="card-item__desc" data-i18n="card.f2d">Champanhe fosco. Para quem já se instalou.</p>
+        </div>
+      </div>
+
+      <div class="card-item reveal">
+        <div class="ccard-stage" style="--drop-delay:.24s">
+          <div class="ccard-shadow" aria-hidden="true"></div>
+          <div class="ccard ccard--esmeralda">
+            <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width=".9">
+                <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
+                <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
+              </g>
+              <rect x="12.5" y="12.5" width="375" height="227" rx="11" fill="none"
+                    stroke="currentColor" stroke-opacity=".6" stroke-width="2.4" stroke-dasharray="1 3.4"/>
+              <g fill="currentColor">
+                <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
+                <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
+                <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
+                <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
+              </g>
+            </svg>
+
+            <p class="ccard__brand">DEFIMIND</p>
+            <div class="ccard__chip" aria-hidden="true"></div>
+            <p class="ccard__digits">3095</p>
+
+            <div class="ccard__medallion">
+              <img src="assets/img/logo.png" alt="" width="120" height="120">
+            </div>
+
+            <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
+            <p class="ccard__since">26</p>
+            <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+
+            <div class="ccard__spec" aria-hidden="true"></div>
+            <div class="ccard__texture" aria-hidden="true"></div>
+            <div class="ccard__sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="card-item__meta">
+          <p class="card-item__name" data-i18n="card.f3n">Esmeralda</p>
+          <p class="card-item__desc" data-i18n="card.f3d">Verde profundo com chip dourado. Edição limitada.</p>
+          <span class="card-item__tag" data-i18n="card.lim">Limitado</span>
+        </div>
+      </div>
+
+      <div class="card-item reveal">
+        <div class="ccard-stage" style="--drop-delay:.36s">
+          <div class="ccard-shadow" aria-hidden="true"></div>
+          <div class="ccard ccard--obsidiana">
+            <svg class="ccard__frame" viewBox="0 0 400 252" aria-hidden="true">
+              <g fill="none" stroke="currentColor" stroke-width=".9">
+                <rect x="9.5" y="9.5" width="381" height="233" rx="13"/>
+                <rect x="15.5" y="15.5" width="369" height="221" rx="9"/>
+              </g>
+              <rect x="12.5" y="12.5" width="375" height="227" rx="11" fill="none"
+                    stroke="currentColor" stroke-opacity=".6" stroke-width="2.4" stroke-dasharray="1 3.4"/>
+              <g fill="currentColor">
+                <path d="M25 12.5 28.5 16 25 19.5 21.5 16Z"/>
+                <path d="M375 12.5 378.5 16 375 19.5 371.5 16Z"/>
+                <path d="M25 232.5 28.5 236 25 239.5 21.5 236Z"/>
+                <path d="M375 232.5 378.5 236 375 239.5 371.5 236Z"/>
+              </g>
+            </svg>
+
+            <p class="ccard__brand">DEFIMIND</p>
+            <div class="ccard__chip" aria-hidden="true"></div>
+            <p class="ccard__digits">7390</p>
+
+            <div class="ccard__medallion">
+              <img src="assets/img/logo.png" alt="" width="120" height="120">
+            </div>
+
+            <div class="ccard__ribbon" aria-hidden="true"><span data-i18n="card.member">MEMBRO DESDE</span></div>
+            <p class="ccard__since">26</p>
+            <p class="ccard__name" data-i18n="card.holder">O TEU NOME AQUI</p>
+
+            <div class="ccard__spec" aria-hidden="true"></div>
+            <div class="ccard__texture" aria-hidden="true"></div>
+            <div class="ccard__sheen" aria-hidden="true"></div>
+          </div>
+        </div>
+        <div class="card-item__meta">
+          <p class="card-item__name" data-i18n="card.f4n">Obsidiana</p>
+          <p class="card-item__desc" data-i18n="card.f4d">Preto absoluto em metal. Só por convite.</p>
+          <span class="card-item__tag" data-i18n="card.inv">Por convite</span>
         </div>
       </div>
     </div>
 
-    <div class="payments__copy reveal" data-delay="1">
-      <p class="tag" data-i18n="card.tag">Cartão DeFiMind Obsidian</p>
-      <h2 class="section__title" data-i18n="card.title">Preto. Discreto. <span class="text-gradient">Aceite em todo o lado.</span></h2>
-      <p class="section__sub section__sub--left" data-i18n="card.sub">
-        As tuas poupanças continuam a render até ao segundo em que pagas. Quando precisas delas,
-        gastas como gastarias com qualquer outro cartão, do supermercado à outra ponta do mundo.
-      </p>
-
-      <div class="mini-grid">
-        <div class="mini">
-          <span class="mini__icon" aria-hidden="true">🖤</span>
-          <p class="mini__t" data-i18n="card.m1t">Virtual e físico</p>
-          <p class="mini__s" data-i18n="card.m1d">O virtual sai na hora. O físico chega a casa em metal.</p>
-        </div>
-        <div class="mini">
-          <span class="mini__icon" aria-hidden="true">🌍</span>
-          <p class="mini__t" data-i18n="card.m2t">Sem fronteiras</p>
-          <p class="mini__s" data-i18n="card.m2d">Funciona em qualquer país e em qualquer loja que aceite cartão.</p>
-        </div>
-        <div class="mini">
-          <span class="mini__icon" aria-hidden="true">💱</span>
-          <p class="mini__t" data-i18n="card.m3t">Câmbio honesto</p>
-          <p class="mini__s" data-i18n="card.m3d">Pagas ao câmbio real, sem margens escondidas na conversão.</p>
-        </div>
-        <div class="mini">
-          <span class="mini__icon" aria-hidden="true">🎁</span>
-          <p class="mini__t" data-i18n="card.m4t">Devolvemos-te parte</p>
-          <p class="mini__s" data-i18n="card.m4d">Cada compra devolve-te uma fatia em recompensas DMIND.</p>
-        </div>
+    <div class="mini-grid mini-grid--wide reveal">
+      <div class="mini">
+        <span class="mini__icon" aria-hidden="true">🖤</span>
+        <p class="mini__t" data-i18n="card.m1t">Virtual e físico</p>
+        <p class="mini__s" data-i18n="card.m1d">O virtual sai na hora. O físico chega a casa em metal.</p>
+      </div>
+      <div class="mini">
+        <span class="mini__icon" aria-hidden="true">🌍</span>
+        <p class="mini__t" data-i18n="card.m2t">Sem fronteiras</p>
+        <p class="mini__s" data-i18n="card.m2d">Funciona em qualquer país e em qualquer loja que aceite cartão.</p>
+      </div>
+      <div class="mini">
+        <span class="mini__icon" aria-hidden="true">💱</span>
+        <p class="mini__t" data-i18n="card.m3t">Câmbio honesto</p>
+        <p class="mini__s" data-i18n="card.m3d">Pagas ao câmbio real, sem margens escondidas na conversão.</p>
+      </div>
+      <div class="mini">
+        <span class="mini__icon" aria-hidden="true">🎁</span>
+        <p class="mini__t" data-i18n="card.m4t">Devolvemos-te parte</p>
+        <p class="mini__s" data-i18n="card.m4d">Cada compra devolve-te uma fatia em recompensas DMIND.</p>
       </div>
     </div>
   </div>
 </section>
+
 
 <!-- ===================== COMPARAÇÃO ===================== -->
 <section class="section section--alt" id="comparacao">
@@ -927,6 +1061,7 @@
   </div>
 </footer>
 
+<script src="assets/js/config.js"></script>
 <script src="assets/js/i18n.js"></script>
 <script src="assets/js/main.js" defer></script>
 </body>

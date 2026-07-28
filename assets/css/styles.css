@@ -731,29 +731,111 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
   transition:transform .55s var(--ease),opacity .55s var(--ease);
 }
 
+/* ------------------------------------------------------------
+   Acabamentos
+
+   Cada cartão é o mesmo desenho: muda só o conjunto de
+   variáveis do metal. Acrescentar um acabamento novo é
+   escrever um bloco destes, nada mais.
+   ------------------------------------------------------------ */
 .ccard{
+  /* obsidiana, o acabamento por omissão */
+  --f-hi:#26282d;   --f-mid:#131418;
+  --f-1:#101115;    --f-2:#090a0d;   --f-3:#030304;
+  --f-ink-1:#f4f6f8; --f-ink-2:#c6cbd3; --f-ink-3:#868c94; --f-ink-4:#e4e8ec;
+  --f-line:rgba(208,213,221,.32);
+  --f-chip-1:#1b1d21; --f-chip-2:#111216; --f-chip-3:#08090b;
+  --f-ribbon:#aeb4bd;
+  --f-edge:rgba(255,255,255,.07);
+  --f-logo:none;
+
   position:relative;z-index:1;width:100%;aspect-ratio:1.586;
   container-type:inline-size;
+  transform-style:preserve-3d;
   background:
-    radial-gradient(135% 112% at 24% -14%,#26282d 0%,#131418 36%,transparent 70%),
-    linear-gradient(158deg,#101115 0%,#090a0d 48%,#030304 100%);
+    /* estrias finas: metal escovado */
+    repeating-linear-gradient(96deg,
+      rgba(255,255,255,.028) 0 1px,
+      rgba(0,0,0,.02) 1px 2px,
+      transparent 2px 5px),
+    radial-gradient(135% 112% at 24% -14%,var(--f-hi) 0%,var(--f-mid) 36%,transparent 70%),
+    linear-gradient(158deg,var(--f-1) 0%,var(--f-2) 48%,var(--f-3) 100%);
   border-radius:var(--r-lg);overflow:hidden;
   box-shadow:
     0 34px 72px rgba(0,0,0,.8),
-    0 0 0 1px rgba(255,255,255,.07),
-    inset 0 1px 0 rgba(255,255,255,.11),
-    inset 0 -1px 0 rgba(0,0,0,.6);
-  transition:transform .55s var(--ease);
+    0 0 0 1px var(--f-edge),
+    /* bisel: luz em cima à esquerda, sombra em baixo à direita */
+    inset 1px 1px 0 rgba(255,255,255,.16),
+    inset -1px -1px 0 rgba(0,0,0,.55),
+    inset 0 0 24px rgba(0,0,0,.35);
+
+  transform:
+    perspective(1100px)
+    rotateX(var(--rx,0deg))
+    rotateY(var(--ry,0deg))
+    translateY(var(--lift,0px))
+    scale(var(--scale,1));
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
 }
-.ccard:hover{transform:translateY(-12px) rotateX(5deg) scale(1.015)}
-.ccard-stage:hover .ccard-shadow{transform:translateX(-50%) scale(1.16);opacity:.6}
+/* enquanto o rato conduz a inclinação não há transição, senão fica a arrastar */
+.ccard.is-tilting{transition:box-shadow .5s var(--ease)}
+
+/* brilho especular que segue o ponteiro: é isto que dá o ar de metal a sério */
+.ccard__spec{
+  position:absolute;inset:0;z-index:3;pointer-events:none;
+  border-radius:inherit;
+  opacity:var(--spec,0);
+  transition:opacity .4s var(--ease);
+  background:
+    radial-gradient(38% 60% at var(--mx,50%) var(--my,50%),
+      rgba(255,255,255,.30) 0%,
+      rgba(255,255,255,.10) 34%,
+      transparent 68%);
+  mix-blend-mode:soft-light;
+}
+
+.ccard--ouro{
+  --f-hi:#c9a24e;   --f-mid:#7c6128;
+  --f-1:#6a5222;    --f-2:#413212;   --f-3:#1e1708;
+  --f-ink-1:#fff8e6; --f-ink-2:#f0dcae; --f-ink-3:#b08f4e; --f-ink-4:#ffeec9;
+  --f-line:rgba(255,238,201,.44);
+  --f-chip-1:#f0e0b0; --f-chip-2:#bfa269; --f-chip-3:#8a713c;
+  --f-ribbon:#e6cf9c;
+  --f-edge:rgba(255,240,205,.16);
+  --f-logo:grayscale(1) sepia(1) saturate(3.4) hue-rotate(-8deg) brightness(1.08);
+}
+
+.ccard--prata{
+  --f-hi:#aeb5be;   --f-mid:#6e757e;
+  --f-1:#5b626b;    --f-2:#3a3f46;   --f-3:#1c1f23;
+  --f-ink-1:#ffffff; --f-ink-2:#e9edf1; --f-ink-3:#9aa1aa; --f-ink-4:#f7f9fb;
+  --f-line:rgba(245,248,251,.48);
+  --f-chip-1:#f2f5f8; --f-chip-2:#b4bbc3; --f-chip-3:#7e858d;
+  --f-ribbon:#dfe4ea;
+  --f-edge:rgba(255,255,255,.18);
+  --f-logo:grayscale(1) brightness(1.5) contrast(.9);
+}
+
+.ccard--esmeralda{
+  --f-hi:#2f8f75;   --f-mid:#125240;
+  --f-1:#0e4535;    --f-2:#082b21;   --f-3:#03130f;
+  --f-ink-1:#f0fff9; --f-ink-2:#c8eede; --f-ink-3:#6fae97; --f-ink-4:#e2fff3;
+  --f-line:rgba(200,245,225,.42);
+  --f-chip-1:#f0e0b0; --f-chip-2:#bfa269; --f-chip-3:#8a713c;
+  --f-ribbon:#a9dcc7;
+  --f-edge:rgba(200,255,235,.15);
+  --f-logo:grayscale(1) sepia(1) saturate(2.8) hue-rotate(108deg) brightness(1.02);
+}
+.ccard-stage:hover .ccard{--lift:-14px;--scale:1.03;--spec:1}
+.ccard-stage:hover .ccard-shadow{transform:translateX(-50%) scale(1.18);opacity:.55}
 
 /* ---------- Queda ---------- */
 .js .ccard-stage .ccard,
 .js .ccard-stage .ccard-shadow{opacity:0}
 
-.js .ccard-stage.is-dropped .ccard{animation:cardDrop 1.35s both}
-.js .ccard-stage.is-dropped .ccard-shadow{animation:cardShadow 1.35s both}
+/* --drop-delay escalona a queda quando há vários cartões */
+.js .ccard-stage.is-dropped .ccard{animation:cardDrop 1.35s var(--drop-delay,0s) both}
+.js .ccard-stage.is-dropped .ccard-shadow{animation:cardShadow 1.35s var(--drop-delay,0s) both}
 
 /* depois de pousar largamos a animação para o hover voltar a mandar */
 .js .ccard-stage.is-landed .ccard,
@@ -785,8 +867,17 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
   background-size:150px 150px;
 }
 
-/* moldura gravada */
-.ccard__frame{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
+/* moldura gravada: herda a cor do acabamento via currentColor */
+.ccard__frame{
+  position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;
+  color:var(--f-line);
+  transform:translateZ(2px);
+}
+
+/* Profundidade real: cada camada assenta a uma altura diferente, por isso
+   ao inclinar o cartão elas deslocam-se umas em relação às outras. É esse
+   paralaxe que o olho lê como relevo em vez de desenho. As alturas estão
+   em cada regra, mais abaixo, para não serem anuladas pela ordem do ficheiro. */
 
 .ccard__sheen{
   position:absolute;inset:0;pointer-events:none;z-index:5;
@@ -804,69 +895,89 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
 .ccard__since,
 .ccard__name{
   position:absolute;z-index:2;margin:0;
-  background:linear-gradient(180deg,#f4f6f8 0%,#c6cbd3 36%,#868c94 54%,#e4e8ec 100%);
+  background:linear-gradient(180deg,var(--f-ink-1) 0%,var(--f-ink-2) 36%,var(--f-ink-3) 54%,var(--f-ink-4) 100%);
   -webkit-background-clip:text;background-clip:text;
   -webkit-text-fill-color:transparent;color:transparent;
   filter:drop-shadow(0 1px 0 rgba(0,0,0,.92)) drop-shadow(0 -1px 0 rgba(255,255,255,.09));
 }
 
 .ccard__brand{
-  top:9%;left:50%;transform:translateX(-50%);white-space:nowrap;
+  top:9%;left:50%;transform:translateX(-50%) translateZ(14px);white-space:nowrap;
   font-size:22px;font-size:5.6cqw;
   font-weight:700;letter-spacing:.26em;text-indent:.26em;
 }
 .ccard__digits{
-  top:39%;right:8%;
+  top:39%;right:8%;transform:translateZ(9px);
   font-size:18px;font-size:4.6cqw;
   font-weight:600;letter-spacing:.05em;
 }
 .ccard__since{
-  bottom:21%;left:75%;transform:translateX(-50%);
+  bottom:21%;left:75%;transform:translateX(-50%) translateZ(7px);
   font-size:12px;font-size:3cqw;
   font-weight:700;letter-spacing:.06em;
 }
 .ccard__name{
-  bottom:6.5%;left:12%;
+  bottom:6.5%;left:12%;transform:translateZ(7px);
   font-size:13px;font-size:3.2cqw;
   font-weight:600;letter-spacing:.07em;
 }
 
 .ccard__chip{
-  position:absolute;z-index:2;top:30%;left:12%;
+  position:absolute;z-index:2;top:30%;left:12%;transform:translateZ(11px);
   width:10%;height:13.5%;border-radius:3px;
-  background:linear-gradient(150deg,#1b1d21 0%,#111216 50%,#08090b 100%);
+  background:linear-gradient(150deg,var(--f-chip-1) 0%,var(--f-chip-2) 50%,var(--f-chip-3) 100%);
   box-shadow:
-    inset 0 2px 5px rgba(0,0,0,.9),
-    inset 0 -1px 0 rgba(255,255,255,.05),
-    0 1px 0 rgba(255,255,255,.05);
+    inset 0 2px 5px rgba(0,0,0,.55),
+    inset 0 -1px 0 rgba(255,255,255,.12),
+    0 1px 0 rgba(255,255,255,.06);
 }
 
 /* medalhão central com a logo */
 .ccard__medallion{
-  position:absolute;z-index:2;top:48.5%;left:50%;transform:translate(-50%,-50%);
+  position:absolute;z-index:2;top:48.5%;left:50%;transform:translate(-50%,-50%) translateZ(18px);
   width:24%;aspect-ratio:1;border-radius:50%;
   display:grid;place-items:center;
-  border:1px solid rgba(214,219,226,.48);
+  border:1px solid var(--f-line);
   background:radial-gradient(circle at 50% 28%,rgba(255,255,255,.05),transparent 66%);
   box-shadow:
-    inset 0 1px 3px rgba(0,0,0,.85),
+    inset 0 1px 3px rgba(0,0,0,.6),
     0 1px 0 rgba(255,255,255,.07);
 }
-.ccard__medallion img{width:80%;height:auto}
+/* a logo ganha o tom do metal do cartão */
+.ccard__medallion img{width:80%;height:auto;filter:var(--f-logo)}
 
 /* faixa "membro desde" */
 .ccard__ribbon{
-  position:absolute;z-index:2;bottom:27%;left:75%;transform:translateX(-50%);
+  position:absolute;z-index:2;bottom:27%;left:75%;transform:translateX(-50%) translateZ(6px);
   padding:.42em 1.1em;white-space:nowrap;
-  border:1px solid rgba(214,219,226,.4);
+  border:1px solid var(--f-line);
   clip-path:polygon(7% 0,93% 0,100% 50%,93% 100%,7% 100%,0 50%);
 }
 .ccard__ribbon span{
   font-size:7px;font-size:1.7cqw;
-  font-weight:600;letter-spacing:.16em;color:#aeb4bd;
+  font-weight:600;letter-spacing:.16em;color:var(--f-ribbon);
+}
+
+/* ---------- Linha de acabamentos ---------- */
+.card-line{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
+  margin-top:8px;
+}
+.card-item{display:flex;flex-direction:column}
+.card-item .ccard-stage{width:100%}
+.card-item__meta{margin-top:42px;text-align:center}
+.card-item__name{
+  font-size:1.0625rem;font-weight:700;letter-spacing:-.02em;margin-bottom:5px;
+}
+.card-item__desc{font-size:.8125rem;color:var(--tx-3);line-height:1.55}
+.card-item__tag{
+  display:inline-block;margin-top:10px;padding:4px 11px;border-radius:var(--r-full);
+  font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(30,186,152,.12);border:1px solid rgba(30,186,152,.3);color:var(--brand-400);
 }
 
 .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px}
+.mini-grid--wide{grid-template-columns:repeat(4,1fr);margin-top:56px}
 .mini{padding:20px;background:var(--glass);border:1px solid var(--line);border-radius:var(--r-lg);transition:border-color var(--t),background var(--t)}
 .mini:hover{border-color:rgba(30,186,152,.3);background:var(--glass-hi)}
 .mini__icon{display:block;font-size:1.375rem;margin-bottom:11px}
@@ -1062,6 +1173,8 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
   .neurex,.payments,.currency{grid-template-columns:1fr}
   .payments__visual{order:2}
   .section__sub--left{max-width:none}
+  .card-line{grid-template-columns:repeat(2,1fr);gap:22px}
+  .mini-grid--wide{grid-template-columns:repeat(2,1fr)}
 
   .footer__grid{grid-template-columns:1fr 1fr;gap:36px}
   .footer__brand{grid-column:1/-1}
@@ -1083,6 +1196,8 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
 
   .calc__left,.calc__right{padding:28px 22px}
   .mini-grid{grid-template-columns:1fr}
+  .card-line{grid-template-columns:1fr;gap:14px}
+  .card-item__meta{margin-top:38px}
   .cur-grid{grid-template-columns:1fr 1fr;gap:12px}
   .cur{padding:16px}
   .cur__val{font-size:1rem}

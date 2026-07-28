@@ -167,9 +167,19 @@
 
       'card.member': 'MEMBER SINCE',
       'card.holder': 'YOUR NAME HERE',
-      'card.tag': 'DeFiMind Obsidian card',
-      'card.title': 'Black. Discreet. <span class="text-gradient">Accepted everywhere.</span>',
-      'card.sub': 'Your savings keep earning right up to the second you pay. When you need them, you spend just as you would with any other card, from the supermarket to the other side of the world.',
+      'card.tag': 'DeFiMind cards',
+      'card.title': 'Four finishes. <span class="text-gradient">One account.</span>',
+      'card.sub': 'All in metal, all backed by the same account. Your savings keep earning right up to the second you pay, from the supermarket to the other side of the world.',
+      'card.f1n': 'Silver',
+      'card.f1d': 'Brushed steel, sober and light. First of the line.',
+      'card.f2n': 'Gold',
+      'card.f2d': 'Matte champagne. For those who have arrived.',
+      'card.f3n': 'Emerald',
+      'card.f3d': 'Deep green with a gold chip. Limited edition.',
+      'card.f4n': 'Obsidian',
+      'card.f4d': 'Absolute black in metal. By invitation only.',
+      'card.lim': 'Limited',
+      'card.inv': 'By invitation',
       'card.m1t': 'Virtual and physical',
       'card.m1d': 'The virtual one is instant. The physical one arrives in metal.',
       'card.m2t': 'No borders',
@@ -253,6 +263,7 @@
       'cta.ok': 'You are in. We will let you know the moment we open registrations.',
       'cta.err': 'Check the email, something seems to be missing.',
       'cta.sending': 'Signing up…',
+      'cta.fail': 'Could not sign you up right now. Please try again in a moment.',
 
       'foot.tagline': 'The bank that never touches your money. Available wherever you are, in the currency you use.',
       'foot.product': 'Product',
@@ -428,9 +439,19 @@
 
       'card.member': 'MIEMBRO DESDE',
       'card.holder': 'TU NOMBRE AQUÍ',
-      'card.tag': 'Tarjeta DeFiMind Obsidian',
-      'card.title': 'Negra. Discreta. <span class="text-gradient">Aceptada en todas partes.</span>',
-      'card.sub': 'Tus ahorros siguen rindiendo hasta el segundo en que pagas. Cuando los necesitas, gastas como lo harías con cualquier otra tarjeta, del supermercado a la otra punta del mundo.',
+      'card.tag': 'Tarjetas DeFiMind',
+      'card.title': 'Cuatro acabados. <span class="text-gradient">Una sola cuenta.</span>',
+      'card.sub': 'Todas en metal, todas con la misma cuenta detrás. Tus ahorros siguen rindiendo hasta el segundo en que pagas, del supermercado a la otra punta del mundo.',
+      'card.f1n': 'Plata',
+      'card.f1d': 'Acero cepillado, sobrio y ligero. El primero de la línea.',
+      'card.f2n': 'Oro',
+      'card.f2d': 'Champán mate. Para quien ya ha llegado.',
+      'card.f3n': 'Esmeralda',
+      'card.f3d': 'Verde profundo con chip dorado. Edición limitada.',
+      'card.f4n': 'Obsidiana',
+      'card.f4d': 'Negro absoluto en metal. Solo por invitación.',
+      'card.lim': 'Limitada',
+      'card.inv': 'Por invitación',
       'card.m1t': 'Virtual y física',
       'card.m1d': 'La virtual sale al momento. La física llega a casa en metal.',
       'card.m2t': 'Sin fronteras',
@@ -514,6 +535,7 @@
       'cta.ok': 'Estás dentro. Te avisamos en cuanto abramos las inscripciones.',
       'cta.err': 'Revisa el email, parece que falta algo.',
       'cta.sending': 'Registrando…',
+      'cta.fail': 'No hemos podido registrarte ahora mismo. Inténtalo de nuevo en un momento.',
 
       'foot.tagline': 'El banco que nunca toca tu dinero. Disponible estés donde estés, en la moneda que usas.',
       'foot.product': 'Producto',
@@ -557,6 +579,7 @@
   pt['cta.ok'] = 'Estás dentro. Avisamos-te assim que abrirmos as inscrições.';
   pt['cta.err'] = 'Confirma o email, parece que falta alguma coisa.';
   pt['cta.sending'] = 'A registar…';
+  pt['cta.fail'] = 'Não conseguimos inscrever-te agora. Tenta outra vez daqui a pouco.';
   DICT.pt = pt;
 
   var detect = function () {

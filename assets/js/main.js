@@ -178,32 +178,82 @@
   /* ----------------------------------------------------------
      Cartão: cai e assenta na mesa
   ---------------------------------------------------------- */
-  var stage = document.getElementById('ccardStage');
+  var stages = document.querySelectorAll('.ccard-stage');
 
-  if (stage) {
-    var drop = function () {
-      if (stage.classList.contains('is-dropped')) return;
-      stage.classList.add('is-dropped');
-      /* quando pousa largamos a animação para o hover voltar a mandar */
-      stage.querySelector('.ccard').addEventListener('animationend', function () {
-        stage.classList.add('is-landed');
-      }, { once: true });
-    };
+  var dropStage = function (stage) {
+    if (stage.classList.contains('is-dropped')) return;
+    stage.classList.add('is-dropped');
+    /* quando pousa largamos a animação para o hover voltar a mandar */
+    stage.querySelector('.ccard').addEventListener('animationend', function () {
+      stage.classList.add('is-landed');
+    }, { once: true });
+  };
 
+  if (stages.length) {
     if (reduceMotion || !('IntersectionObserver' in window)) {
-      stage.classList.add('is-dropped', 'is-landed');
+      stages.forEach(function (s) { s.classList.add('is-dropped', 'is-landed'); });
     } else {
       var dropObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          drop();
+          dropStage(entry.target);
           dropObserver.unobserve(entry.target);
         });
-      }, { threshold: 0.35 });
+      }, { threshold: 0.3 });
 
-      dropObserver.observe(stage);
-      watch(stage, drop);
+      stages.forEach(function (s) {
+        dropObserver.observe(s);
+        watch(s, function () { dropStage(s); });
+      });
     }
+  }
+
+  /* ----------------------------------------------------------
+     Cartões em 3D
+
+     A inclinação segue o ponteiro e o brilho especular desloca-se
+     com ele. Combinado com as alturas (translateZ) de cada camada,
+     é o que faz o cartão ler como um objecto e não como um desenho.
+
+     Só em ponteiros finos: em ecrãs tácteis não há hover e o efeito
+     ficaria preso na última posição tocada.
+  ---------------------------------------------------------- */
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+  if (fine && !reduceMotion) {
+    Array.prototype.forEach.call(document.querySelectorAll('.ccard'), function (card) {
+      var frame = null;
+
+      var move = function (e) {
+        var box = card.getBoundingClientRect();
+        var px = (e.clientX - box.left) / box.width;
+        var py = (e.clientY - box.top) / box.height;
+
+        if (frame) return;
+        frame = requestAnimationFrame(function () {
+          frame = null;
+          card.style.setProperty('--rx', ((0.5 - py) * 15).toFixed(2) + 'deg');
+          card.style.setProperty('--ry', ((px - 0.5) * 21).toFixed(2) + 'deg');
+          card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+          card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+        });
+      };
+
+      card.addEventListener('mouseenter', function () {
+        card.classList.add('is-tilting');
+      });
+
+      card.addEventListener('mousemove', move);
+
+      card.addEventListener('mouseleave', function () {
+        if (frame) { cancelAnimationFrame(frame); frame = null; }
+        card.classList.remove('is-tilting');
+        card.style.removeProperty('--rx');
+        card.style.removeProperty('--ry');
+        card.style.removeProperty('--mx');
+        card.style.removeProperty('--my');
+      });
+    });
   }
 
   /* ----------------------------------------------------------
@@ -393,22 +443,44 @@
       button.disabled = true;
       button.textContent = i18n.t('cta.sending');
 
-      /* ---- substituir por chamada ao backend ---- */
-      window.setTimeout(function () {
-        try {
-          var list = JSON.parse(localStorage.getItem('defimind:waitlist') || '[]');
-          if (list.indexOf(email) === -1) list.push(email);
-          localStorage.setItem('defimind:waitlist', JSON.stringify(list));
-        } catch (err) {
-          /* localStorage indisponível, seguimos na mesma */
-        }
+      var cfg = window.DFM_CONFIG || {};
 
+      var terminar = function (texto, estado) {
         form.reset();
         button.disabled = false;
         button.textContent = label;
-        setMessage(i18n.t('cta.ok'), 'ok');
-      }, 700);
-      /* ---- fim do bloco a substituir ---- */
+        setMessage(i18n.t(texto), estado);
+      };
+
+      if (!cfg.supabaseUrl || !cfg.supabaseKey) {
+        terminar('cta.fail', 'err');
+        return;
+      }
+
+      /* resolution=ignore-duplicates: um email já inscrito devolve sucesso
+         na mesma. Se devolvesse erro, qualquer pessoa podia usar o
+         formulário para descobrir quem está na lista.
+         return=minimal: não queremos nada de volta. */
+      fetch(cfg.supabaseUrl + '/rest/v1/waitlist', {
+        method: 'POST',
+        headers: {
+          'apikey': cfg.supabaseKey,
+          'Authorization': 'Bearer ' + cfg.supabaseKey,
+          'Content-Type': 'application/json',
+          'Prefer': 'resolution=ignore-duplicates,return=minimal'
+        },
+        body: JSON.stringify({
+          email: email,
+          lang: i18n.lang || 'pt',
+          source: 'landing'
+        })
+      }).then(function (res) {
+        if (res.ok) { terminar('cta.ok', 'ok'); return; }
+        /* 400 costuma ser o formato recusado pela restrição do servidor */
+        terminar(res.status === 400 ? 'cta.err' : 'cta.fail', 'err');
+      }).catch(function () {
+        terminar('cta.fail', 'err');
+      });
     });
 
     emailInput.addEventListener('input', function () {

@@ -17,3 +17,8 @@ dist/
 .env
 .env.local
 *.log
+
+# Supabase: as migrações vão para o repositório, o resto não
+supabase/.temp/
+supabase/.branches/
+supabase/config.toml

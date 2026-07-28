@@ -95,15 +95,48 @@ BRL está a simular 1000 reais, não a converter dólares.
 Para acrescentar uma moeda: junta uma entrada em `CURRENCIES`, mapeia os países em
 `REGION_CURRENCY` e acrescenta o botão em `#curPicker` no `index.html`.
 
-## Ligar o formulário da lista de espera
+## Lista de espera (Supabase)
 
-Neste momento os emails ficam guardados apenas no `localStorage` do visitante, o que serve
-para demonstração mas não recolhe nada de facto. Em `assets/js/main.js` procura o bloco
-marcado `substituir por chamada ao backend` e troca o `setTimeout` por um `fetch` para o
-serviço escolhido (Formspree, Supabase, Mailchimp, um endpoint próprio).
+O formulário grava em Supabase. Falta **um passo manual** antes de funcionar: criar a
+tabela. Abre o *SQL Editor* do projecto, cola o conteúdo de
+`supabase/migrations/0001_waitlist.sql` e executa.
 
-A validação, os estados de erro e sucesso, o bloqueio do botão durante o envio e a limpeza
-do campo já estão feitos. Só falta o destino.
+### Porque é que a chave está à vista
+
+`assets/js/config.js` tem a chave *publishable* em texto simples. É suposto. Essa chave
+viaja no JavaScript e qualquer visitante a consegue ler, em qualquer site que use Supabase
+no browser. Não é um descuido nem se resolve escondendo-a.
+
+Quem faz a segurança é a base de dados. A migração liga *row level security* e cria uma
+única política: **inserir sim, ler não**. Não existe política de `select`, `update` ou
+`delete`, portanto mesmo com a chave na mão ninguém descarrega a lista de emails a partir
+do browser. Para ler é preciso a chave `service_role`, que nunca pode sair do servidor e
+nunca deve entrar neste repositório.
+
+A validação do email também está do lado do servidor, numa restrição `check`. A validação
+do browser é conveniência; a que conta é a que não se consegue contornar.
+
+### Emails repetidos
+
+O pedido usa `Prefer: resolution=ignore-duplicates`. Um email já inscrito devolve sucesso
+à mesma. Se devolvesse erro, qualquer pessoa podia usar o formulário para descobrir quem
+está na lista, um email de cada vez.
+
+### Ver as inscrições
+
+Pelo painel do Supabase, em *Table editor → waitlist*. Não há maneira de as ler a partir
+do site, de propósito.
+
+### Por fazer
+
+- **Limitar a cadência.** O Supabase tem limites gerais de API, mas nada impede alguém de
+  inserir milhares de emails válidos. Um gatilho que conte inserções por janela de tempo
+  resolve.
+- **Confirmar o email** antes de considerar a inscrição válida, se a lista for usada para
+  envios a sério.
+- **RGPD:** guardamos email, idioma e data, e mais nada. Sem IP, sem impressão digital do
+  browser. Antes do lançamento é preciso a política de privacidade e uma forma de pedir
+  a remoção.
 
 ## Antes de ir para o ar
 
