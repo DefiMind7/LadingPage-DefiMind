@@ -958,14 +958,61 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
   font-weight:600;letter-spacing:.16em;color:var(--f-ribbon);
 }
 
-/* ---------- Linha de acabamentos ---------- */
-.card-line{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:26px;
-  margin-top:8px;
-}
-.card-item{display:flex;flex-direction:column}
+/* ---------- Leque de acabamentos ----------
+   Os cartões sobrepõem-se como uma mão de cartas. Ao passar o rato,
+   o que está debaixo endireita-se, sobe e vem à frente dos outros.
+   O pivô da rotação fica por baixo do cartão, que é o que faz o
+   arco abrir como um leque de verdade em vez de rodar no centro. */
+/* Base: grelha simples. Funciona em tudo, incluindo ecrãs tácteis,
+   onde não há rato e um leque não teria como ser aberto. */
+.card-fan{display:grid;grid-template-columns:repeat(4,1fr);gap:26px}
+.card-item{position:relative}
 .card-item .ccard-stage{width:100%}
 .card-item__meta{margin-top:42px;text-align:center}
+.card-fan__hint{display:none}
+
+/* O leque só entra onde há rato e largura para o abrir. */
+@media (hover:hover) and (pointer:fine) and (min-width:901px){
+  .card-fan{
+    display:flex;justify-content:center;align-items:flex-start;gap:0;
+    padding:34px 0 132px;
+    perspective:1600px;
+  }
+  .card-fan .card-item{
+    flex:0 0 auto;
+    width:clamp(200px,23vw,300px);
+    margin-left:-9.5%;
+    transform-origin:50% 135%;
+    transform:rotate(var(--fan-rot,0deg)) translateY(var(--fan-y,0px));
+    transition:transform .5s var(--ease),opacity .35s var(--ease);
+  }
+  .card-fan .card-item:first-child{margin-left:0}
+
+  /* o cartão sob o rato endireita-se, sobe e passa à frente */
+  .card-fan .card-item:hover{
+    z-index:20;
+    transform:rotate(0deg) translateY(-52px) scale(1.09);
+  }
+  /* os outros recuam para o que interessa saltar à vista */
+  .card-fan:hover .card-item:not(:hover){opacity:.6}
+
+  /* a legenda vive por baixo do próprio cartão, por isso sobe com ele */
+  .card-fan .card-item__meta{
+    position:absolute;top:100%;left:50%;width:230px;margin-top:0;
+    transform:translateX(-50%) translateY(6px);
+    opacity:0;pointer-events:none;
+    transition:opacity .3s var(--ease),transform .3s var(--ease);
+  }
+  .card-fan .card-item:hover .card-item__meta{
+    opacity:1;transform:translateX(-50%) translateY(24px);
+  }
+
+  .card-fan__hint{
+    display:block;text-align:center;font-size:.8125rem;color:var(--tx-4);
+    margin-top:-106px;transition:opacity .3s var(--ease);
+  }
+  .card-fan:hover + .card-fan__hint{opacity:0}
+}
 .card-item__name{
   font-size:1.0625rem;font-weight:700;letter-spacing:-.02em;margin-bottom:5px;
 }
@@ -1173,7 +1220,7 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
   .neurex,.payments,.currency{grid-template-columns:1fr}
   .payments__visual{order:2}
   .section__sub--left{max-width:none}
-  .card-line{grid-template-columns:repeat(2,1fr);gap:22px}
+  .card-fan{grid-template-columns:repeat(2,1fr);gap:22px}
   .mini-grid--wide{grid-template-columns:repeat(2,1fr)}
 
   .footer__grid{grid-template-columns:1fr 1fr;gap:36px}
@@ -1196,7 +1243,7 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
 
   .calc__left,.calc__right{padding:28px 22px}
   .mini-grid{grid-template-columns:1fr}
-  .card-line{grid-template-columns:1fr;gap:14px}
+  .card-fan{grid-template-columns:1fr;gap:18px}
   .card-item__meta{margin-top:38px}
   .cur-grid{grid-template-columns:1fr 1fr;gap:12px}
   .cur{padding:16px}
