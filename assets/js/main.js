@@ -457,17 +457,21 @@
         return;
       }
 
-      /* resolution=ignore-duplicates: um email já inscrito devolve sucesso
-         na mesma. Se devolvesse erro, qualquer pessoa podia usar o
-         formulário para descobrir quem está na lista.
-         return=minimal: não queremos nada de volta. */
+      /* Só o cabeçalho apikey. A chave publishable não é um JWT, por isso
+         mandá-la também em Authorization: Bearer faz o PostgREST tentar
+         lê-la como token e devolver 401.
+
+         return=minimal: não queremos nada de volta.
+
+         Não usamos Prefer: resolution=ignore-duplicates porque isso
+         obriga o PostgREST a exigir privilégio de SELECT na tabela, que
+         recusámos de propósito para ninguém poder ler a lista. */
       fetch(cfg.supabaseUrl + '/rest/v1/waitlist', {
         method: 'POST',
         headers: {
           'apikey': cfg.supabaseKey,
-          'Authorization': 'Bearer ' + cfg.supabaseKey,
           'Content-Type': 'application/json',
-          'Prefer': 'resolution=ignore-duplicates,return=minimal'
+          'Prefer': 'return=minimal'
         },
         body: JSON.stringify({
           email: email,
@@ -475,8 +479,11 @@
           source: 'landing'
         })
       }).then(function (res) {
-        if (res.ok) { terminar('cta.ok', 'ok'); return; }
-        /* 400 costuma ser o formato recusado pela restrição do servidor */
+        /* 409 é email repetido. Mostramos sucesso na mesma: se disséssemos
+           "já estás inscrito", o formulário passava a ser uma forma de
+           descobrir quem está na lista, um email de cada vez. */
+        if (res.ok || res.status === 409) { terminar('cta.ok', 'ok'); return; }
+        /* 400 é o formato recusado pela restrição do servidor */
         terminar(res.status === 400 ? 'cta.err' : 'cta.fail', 'err');
       }).catch(function () {
         terminar('cta.fail', 'err');

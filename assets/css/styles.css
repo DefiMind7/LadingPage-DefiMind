@@ -974,24 +974,36 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
 /* O leque só entra onde há rato e largura para o abrir. */
 @media (hover:hover) and (pointer:fine) and (min-width:901px){
   .card-fan{
+    --card-w:clamp(220px,24vw,300px);
     display:flex;justify-content:center;align-items:flex-start;gap:0;
-    padding:34px 0 132px;
+    padding:44px 0 150px;
     perspective:1600px;
   }
   .card-fan .card-item{
     flex:0 0 auto;
-    width:clamp(200px,23vw,300px);
-    margin-left:-9.5%;
-    transform-origin:50% 135%;
-    transform:rotate(var(--fan-rot,0deg)) translateY(var(--fan-y,0px));
+    width:var(--card-w);
+    /* Sobreposição forte: cada carta tapa quase metade da anterior,
+       como um baralho seguro na mão.
+       Tem de ser calc() sobre a largura da carta: uma margem em
+       percentagem num item flex resolve contra o contentor, não
+       contra o elemento, e invertia a ordem das cartas. */
+    margin-left:calc(var(--card-w) * -0.44);
+    /* Pivô abaixo das cartas: é aí que elas convergem, como se alguém
+       as segurasse todas por um ponto só. Quanto mais fundo o pivô,
+       mais as cartas de fora se afastam na horizontal: a 180% cada
+       uma desloca-se ~91px, o que mantém o leque dentro da caixa. */
+    transform-origin:50% 180%;
+    transform:rotate(var(--fan-rot,0deg));
     transition:transform .5s var(--ease),opacity .35s var(--ease);
   }
   .card-fan .card-item:first-child{margin-left:0}
 
-  /* o cartão sob o rato endireita-se, sobe e passa à frente */
+  /* o cartão sob o rato endireita-se, sobe e passa à frente.
+     Sobe bastante porque a sobreposição é apertada e ele tem de
+     se libertar dos vizinhos para se ver inteiro. */
   .card-fan .card-item:hover{
     z-index:20;
-    transform:rotate(0deg) translateY(-52px) scale(1.09);
+    transform:rotate(0deg) translateY(-74px) scale(1.12);
   }
   /* os outros recuam para o que interessa saltar à vista */
   .card-fan:hover .card-item:not(:hover){opacity:.6}

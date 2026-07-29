@@ -118,14 +118,42 @@ do browser é conveniência; a que conta é a que não se consegue contornar.
 
 ### Emails repetidos
 
-O pedido usa `Prefer: resolution=ignore-duplicates`. Um email já inscrito devolve sucesso
-à mesma. Se devolvesse erro, qualquer pessoa podia usar o formulário para descobrir quem
+Um email já inscrito devolve `409`, e o JavaScript mostra na mesma a mensagem de sucesso.
+Se dissesse "já estás inscrito", o formulário passava a ser uma forma de descobrir quem
 está na lista, um email de cada vez.
+
+A primeira tentativa foi `Prefer: resolution=ignore-duplicates`, que resolveria isto do
+lado do servidor. Não dá: esse cabeçalho obriga o PostgREST a exigir privilégio de
+`SELECT` na tabela, exactamente o que recusamos para ninguém poder ler a lista. Ou se tem
+um ou se tem o outro, e a lista fechada vale mais.
+
+### Cabeçalhos do pedido
+
+Só `apikey`. A chave *publishable* não é um JWT, por isso mandá-la também em
+`Authorization: Bearer` faz o PostgREST tentar lê-la como token e responder `401`.
 
 ### Ver as inscrições
 
 Pelo painel do Supabase, em *Table editor → waitlist*. Não há maneira de as ler a partir
 do site, de propósito.
+
+### Verificado contra o projecto a sério
+
+| Tentativa | Resultado |
+| --- | --- |
+| Inscrever email novo | `201`, gravado |
+| Inscrever o mesmo outra vez | `409`, mensagem de sucesso à mesma |
+| Inscrever email inválido | `400`, recusado pela restrição do servidor |
+| **Ler a lista** com a chave pública | `401`, negado |
+| **Alterar** uma linha | `401`, negado |
+| **Apagar** uma linha | `401`, negado |
+
+### Cache dos ficheiros
+
+`assets/css` e `assets/js` são servidos com `must-revalidate`, não com `immutable`. Sem
+build que ponha uma impressão digital no nome dos ficheiros, marcá-los como imutáveis
+faria com que uma actualização nunca chegasse a quem já tivesse visitado o site. Só as
+imagens levam cache longa, porque essas não mudam.
 
 ### Por fazer
 
