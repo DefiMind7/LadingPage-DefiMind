@@ -145,7 +145,16 @@
       'calc.resultB': 'years',
       'calc.put': 'You put in',
       'calc.earned': 'It earned',
-      'calc.note': 'Compound interest estimate, for illustration only. This is not financial advice nor a guarantee of returns.',
+      'calc.rateLbl': 'Effective annual rate',
+      'calc.totalPct': 'Total return over the period',
+      'calc.fees': '1.3% fee on the way in and on the way out',
+      'calc.net': 'Estimated net value',
+      'calc.yearByYear': 'See the maths year by year',
+      'calc.thYear': 'Year',
+      'calc.thStart': 'At the start',
+      'calc.thEarned': 'Earned',
+      'calc.thEnd': 'At the end',
+      'calc.note': 'Compound interest on the effective annual rate, capitalised once a year. An estimate for illustration only: this is not financial advice nor a guarantee of returns.',
       'calc.yearOne': 'year',
       'calc.yearMany': 'years',
 
@@ -257,10 +266,6 @@
       'cta.placeholder': 'your@email.com',
       'cta.button': 'Count me in',
       'cta.fine': 'By joining the list you agree to receive news about the launch. Leave whenever you want, with one click.',
-      'cta.b1': '🌍 Worldwide',
-      'cta.b2': '🔐 Only you hold the key',
-      'cta.b3': '🛡️ Bank-grade protection',
-      'cta.b4': '💬 24/7 support',
       'cta.ok': 'You are in. We will let you know the moment we open registrations.',
       'cta.err': 'Check the email, something seems to be missing.',
       'cta.sending': 'Signing up…',
@@ -280,7 +285,6 @@
       'foot.risk': 'Risk warning',
       'foot.rights': 'All rights reserved.',
       'foot.worldwide': 'Available worldwide',
-      'foot.riskText': '<strong>Risk warning.</strong> Investing in digital assets carries high risk, including the total loss of the capital invested. The return percentages shown on this site are estimates based on historical performance, constitute no guarantee whatsoever and may not repeat. DeFiMind is not a credit institution, does not take deposits, and amounts placed on the platform are not covered by any deposit guarantee scheme. Nothing on this site constitutes personalised financial, tax or investment advice. Before investing, assess your own situation and, if in doubt, consult a qualified professional. Service availability and payment methods vary by country.',
 
       'meta.title': 'DeFiMind · The bank that never touches your money',
       'meta.desc': 'Savings that earn every day, with a bank’s security and one difference that changes everything: the key is yours. Available worldwide, in the currency you use.'
@@ -418,7 +422,16 @@
       'calc.resultB': 'años',
       'calc.put': 'Pusiste',
       'calc.earned': 'Rindió',
-      'calc.note': 'Estimación con interés compuesto, solo a efectos ilustrativos. No constituye asesoramiento financiero ni garantía de rendimiento.',
+      'calc.rateLbl': 'Tasa anual efectiva',
+      'calc.totalPct': 'Rendimiento total del período',
+      'calc.fees': 'Comisión del 1,3% a la entrada y a la salida',
+      'calc.net': 'Valor neto estimado',
+      'calc.yearByYear': 'Ver las cuentas año a año',
+      'calc.thYear': 'Año',
+      'calc.thStart': 'Al principio',
+      'calc.thEarned': 'Rindió',
+      'calc.thEnd': 'Al final',
+      'calc.note': 'Interés compuesto sobre la tasa anual efectiva, capitalizado una vez al año. Estimación solo a efectos ilustrativos: no es asesoramiento financiero ni garantía de rendimiento.',
       'calc.yearOne': 'año',
       'calc.yearMany': 'años',
 
@@ -530,10 +543,6 @@
       'cta.placeholder': 'tu@email.com',
       'cta.button': 'Quiero entrar',
       'cta.fine': 'Al entrar en la lista aceptas recibir novedades sobre el lanzamiento. Sales cuando quieras, con un clic.',
-      'cta.b1': '🌍 En todo el mundo',
-      'cta.b2': '🔐 Solo tú tienes la llave',
-      'cta.b3': '🛡️ Protección de nivel bancario',
-      'cta.b4': '💬 Soporte 24/7',
       'cta.ok': 'Estás dentro. Te avisamos en cuanto abramos las inscripciones.',
       'cta.err': 'Revisa el email, parece que falta algo.',
       'cta.sending': 'Registrando…',
@@ -553,7 +562,6 @@
       'foot.risk': 'Aviso de riesgo',
       'foot.rights': 'Todos los derechos reservados.',
       'foot.worldwide': 'Disponible en todo el mundo',
-      'foot.riskText': '<strong>Aviso de riesgo.</strong> Invertir en activos digitales conlleva un riesgo elevado, incluida la pérdida total del capital invertido. Los porcentajes de rendimiento presentados en este sitio son estimaciones basadas en resultados históricos, no constituyen garantía alguna y pueden no repetirse. DeFiMind no es una entidad de crédito, no acepta depósitos y los importes colocados en la plataforma no están cubiertos por ningún fondo de garantía de depósitos. Nada en este sitio constituye asesoramiento financiero, fiscal o de inversión personalizado. Antes de invertir, evalúa tu situación y, si tienes dudas, consulta a un profesional cualificado. La disponibilidad del servicio y de los métodos de pago varía según el país.',
 
       'meta.title': 'DeFiMind · El banco que nunca toca tu dinero',
       'meta.desc': 'Ahorros que rinden todos los días, con la seguridad de un banco y una diferencia que lo cambia todo: la llave es tuya. Disponible en todo el mundo, en la moneda que usas.'
@@ -570,6 +578,15 @@
   pt['cta.placeholder'] = 'o.teu@email.com';
   pt['cta.label'] = 'O teu email';
   pt['a11y.lang'] = 'Idioma';
+  pt['calc.rateLbl'] = 'Taxa anual efectiva';
+  pt['calc.totalPct'] = 'Rendimento total no período';
+  pt['calc.fees'] = 'Comissão de 1,3% à entrada e à saída';
+  pt['calc.net'] = 'Valor líquido estimado';
+  pt['calc.yearByYear'] = 'Ver as contas ano a ano';
+  pt['calc.thYear'] = 'Ano';
+  pt['calc.thStart'] = 'No início';
+  pt['calc.thEarned'] = 'Rendeu';
+  pt['calc.thEnd'] = 'No fim';
   pt['calc.yearOne'] = 'ano';
   pt['calc.yearMany'] = 'anos';
   pt['calc.plan'] = 'Plano';

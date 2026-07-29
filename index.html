@@ -544,7 +544,44 @@
         <div class="calc__bar" aria-hidden="true">
           <i class="calc__barFill" id="calcBar" style="width:66%"></i>
         </div>
-        <p class="calc__note" data-i18n="calc.note">Estimativa com juros compostos, apenas para efeitos ilustrativos. Não constitui aconselhamento financeiro nem garantia de rendimento.</p>
+
+        <dl class="calc__lines">
+          <div>
+            <dt data-i18n="calc.rateLbl">Taxa anual efectiva</dt>
+            <dd id="calcRate">24%</dd>
+          </div>
+          <div>
+            <dt data-i18n="calc.totalPct">Rendimento total no período</dt>
+            <dd id="calcTotalPct">+193,2%</dd>
+          </div>
+          <div>
+            <dt data-i18n="calc.fees">Comissão de 1,3% à entrada e à saída</dt>
+            <dd id="calcFees">−75,73 €</dd>
+          </div>
+          <div class="calc__lines-net">
+            <dt data-i18n="calc.net">Valor líquido estimado</dt>
+            <dd id="calcNet">2 855,90 €</dd>
+          </div>
+        </dl>
+
+        <details class="calc__years">
+          <summary data-i18n="calc.yearByYear">Ver as contas ano a ano</summary>
+          <div class="calc__yearsBox">
+            <table class="calc__table">
+              <thead>
+                <tr>
+                  <th scope="col" data-i18n="calc.thYear">Ano</th>
+                  <th scope="col" data-i18n="calc.thStart">No início</th>
+                  <th scope="col" data-i18n="calc.thEarned">Rendeu</th>
+                  <th scope="col" data-i18n="calc.thEnd">No fim</th>
+                </tr>
+              </thead>
+              <tbody id="calcTableBody"></tbody>
+            </table>
+          </div>
+        </details>
+
+        <p class="calc__note" data-i18n="calc.note">Juros compostos sobre a taxa anual efectiva, capitalizados uma vez por ano. Estimativa para efeitos ilustrativos: não é aconselhamento financeiro nem garantia de rendimento.</p>
       </div>
     </div>
   </div>
@@ -989,13 +1026,6 @@
       <p class="waitlist__msg" id="waitlistMsg" role="status" aria-live="polite"></p>
       <p class="waitlist__fine" data-i18n="cta.fine">Ao entrares na lista aceitas receber novidades sobre o lançamento. Sais quando quiseres, com um clique.</p>
     </form>
-
-    <ul class="cta__badges reveal" data-delay="3">
-      <li data-i18n="cta.b1">🌍 Em todo o mundo</li>
-      <li data-i18n="cta.b2">🔐 Só tu tens a chave</li>
-      <li data-i18n="cta.b3">🛡️ Proteção de nível bancário</li>
-      <li data-i18n="cta.b4">💬 Suporte 24/7</li>
-    </ul>
   </div>
 </section>
 
@@ -1046,14 +1076,6 @@
       </nav>
     </div>
 
-    <div class="footer__risk">
-      <p data-i18n="foot.riskText"><strong>Aviso de risco.</strong> Investir em activos digitais envolve risco elevado, incluindo a perda total do capital investido.
-      As percentagens de rendimento apresentadas neste site são estimativas baseadas em desempenho histórico, não constituem
-      qualquer garantia e podem não repetir-se. O DeFiMind não é uma instituição de crédito, não aceita depósitos e os valores
-      colocados na plataforma não estão cobertos por qualquer fundo de garantia de depósitos. Nada neste site constitui
-      aconselhamento financeiro, fiscal ou de investimento personalizado. Antes de investir, avalia a tua situação e, se tiveres
-      dúvidas, procura um profissional habilitado. A disponibilidade do serviço e dos métodos de pagamento varia consoante o país.</p>
-    </div>
 
     <div class="footer__bottom">
       <p>© <span data-year>2026</span> DeFiMind. <span data-i18n="foot.rights">Todos os direitos reservados.</span></p>

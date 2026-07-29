@@ -323,31 +323,82 @@
     var principalEl = document.getElementById('calcPrincipal');
     var gainEl = document.getElementById('calcGain');
     var barEl = document.getElementById('calcBar');
+    var rateEl = document.getElementById('calcRate');
+    var totalPctEl = document.getElementById('calcTotalPct');
+    var feesEl = document.getElementById('calcFees');
+    var netEl = document.getElementById('calcNet');
+    var tableBody = document.getElementById('calcTableBody');
     var planButtons = document.querySelectorAll('.segmented:not(#curPicker) button');
     var curButtons = document.querySelectorAll('#curPicker button');
 
     var rate = 24;
+    var FEE = 0.013;   /* 1,3% por movimento, o mesmo que está nas perguntas */
 
     var paintTrack = function (input) {
       var pct = ((input.value - input.min) / (input.max - input.min)) * 100;
       input.style.setProperty('--pct', pct + '%');
     };
 
+    /* Cêntimos até 100 mil, unidades acima disso: abaixo desse valor os
+       cêntimos importam, acima só fariam ruído. */
+    var exact = function (v) {
+      var casas = Math.abs(v) < 100000 ? 2 : 0;
+      return new Intl.NumberFormat(CURRENCIES[currency].locale, {
+        style: 'currency', currency: currency,
+        minimumFractionDigits: casas, maximumFractionDigits: casas,
+        useGrouping: 'always'
+      }).format(v);
+    };
+
+    var pct = function (v) {
+      return new Intl.NumberFormat(CURRENCIES[currency].locale, {
+        minimumFractionDigits: 1, maximumFractionDigits: 1
+      }).format(v);
+    };
+
     var update = function () {
       var principal = Number(amountInput.value);
       var years = Number(yearsInput.value);
-      var total = principal * Math.pow(1 + rate / 100, years);
+      var mult = Math.pow(1 + rate / 100, years);
+
+      /* Bruto: juros compostos sobre a taxa anual efectiva. */
+      var total = principal * mult;
       var gain = total - principal;
 
-      amountOut.textContent = money.format(principal);
+      /* Líquido: a comissão à entrada reduz o capital que fica a render,
+         por isso o custo dela também compõe. A comissão à saída incide
+         sobre o valor final. */
+      var net = principal * (1 - FEE) * mult * (1 - FEE);
+      var fees = total - net;
+
+      amountOut.textContent = exact(principal);
       yearsOut.textContent = years + ' ' + i18n.t(years === 1 ? 'calc.yearOne' : 'calc.yearMany');
       yearsLbl.textContent = years;
 
-      resultEl.textContent = money.format(total);
-      principalEl.textContent = money.format(principal);
-      gainEl.textContent = '+' + money.format(gain);
+      resultEl.textContent = exact(total);
+      principalEl.textContent = exact(principal);
+      gainEl.textContent = '+' + exact(gain);
+
+      rateEl.textContent = rate + '%';
+      totalPctEl.textContent = '+' + pct(gain / principal * 100) + '%';
+      feesEl.textContent = '−' + exact(fees);
+      netEl.textContent = exact(net);
 
       barEl.style.width = Math.min((gain / total) * 100, 100).toFixed(1) + '%';
+
+      /* Ano a ano, para as contas poderem ser conferidas em vez de
+         aceites por fé. */
+      var linhas = '';
+      var saldo = principal;
+      for (var ano = 1; ano <= years; ano++) {
+        var inicio = saldo;
+        var juros = inicio * (rate / 100);
+        saldo = inicio + juros;
+        linhas += '<tr><td>' + ano + '</td><td>' + exact(inicio) +
+                  '</td><td class="calc__pos">+' + exact(juros) +
+                  '</td><td>' + exact(saldo) + '</td></tr>';
+      }
+      tableBody.innerHTML = linhas;
 
       paintTrack(amountInput);
       paintTrack(yearsInput);

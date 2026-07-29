@@ -619,6 +619,42 @@ input[type=range]::-moz-range-track{height:6px;border-radius:var(--r-full);backg
 .calc__splitVal--pos{color:var(--ok-400)}
 .calc__bar{height:7px;background:rgba(255,255,255,.08);border-radius:var(--r-full);overflow:hidden;margin-bottom:18px}
 .calc__barFill{display:block;height:100%;background:var(--grad-brand);border-radius:var(--r-full);transition:width .5s var(--ease)}
+/* ---------- Detalhe das contas ---------- */
+.calc__lines{display:flex;flex-direction:column;gap:9px;margin-bottom:16px}
+.calc__lines > div{
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+  font-size:.8125rem;
+}
+.calc__lines dt{color:var(--tx-3)}
+.calc__lines dd{margin:0;font-weight:600;color:var(--tx-2);white-space:nowrap}
+.calc__lines-net{
+  padding-top:10px;border-top:1px solid var(--line);
+  font-size:.875rem !important;
+}
+.calc__lines-net dt{color:var(--tx-2) !important}
+.calc__lines-net dd{color:var(--brand-400) !important;font-weight:700}
+
+.calc__years{margin-bottom:16px}
+.calc__years summary{
+  cursor:pointer;list-style:none;
+  font-size:.8125rem;font-weight:600;color:var(--brand-400);
+  padding:9px 0;
+}
+.calc__years summary::-webkit-details-marker{display:none}
+.calc__years summary::after{content:" ↓";font-weight:400}
+.calc__years[open] summary::after{content:" ↑"}
+.calc__yearsBox{max-height:230px;overflow-y:auto;border:1px solid var(--line);border-radius:var(--r-md)}
+.calc__table{font-size:.75rem;min-width:100%}
+.calc__table th{
+  position:sticky;top:0;
+  padding:9px 10px;text-align:left;font-weight:600;
+  color:var(--tx-3);background:var(--overlay);
+  border-bottom:1px solid var(--line);white-space:nowrap;
+}
+.calc__table td{padding:8px 10px;color:var(--tx-2);border-bottom:1px solid rgba(255,255,255,.05);white-space:nowrap}
+.calc__table tr:last-child td{border-bottom:0}
+.calc__pos{color:var(--brand-400)}
+
 .calc__note{font-size:.75rem;color:var(--tx-3);line-height:1.55}
 
 /* ============================================================
@@ -1128,13 +1164,6 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
 .waitlist__msg.is-err{color:var(--danger-400)}
 .waitlist__fine{margin-top:6px;font-size:.75rem;color:var(--tx-3)}
 
-.cta__badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:40px}
-.cta__badges li{
-  padding:9px 18px;border-radius:var(--r-full);
-  background:var(--glass);border:1px solid var(--line);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  font-size:.8125rem;color:var(--tx-2);
-}
 
 /* ============================================================
    FOOTER
@@ -1158,12 +1187,6 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
 .footer__col a{font-size:.9063rem;color:var(--tx-3);transition:color var(--t)}
 .footer__col a:hover{color:var(--brand-300)}
 
-.footer__risk{
-  padding:22px 24px;margin-bottom:26px;
-  background:rgba(255,255,255,.022);border:1px solid var(--line);border-radius:var(--r-md);
-}
-.footer__risk p{font-size:.75rem;color:var(--tx-3);line-height:1.7}
-.footer__risk strong{color:var(--tx-2)}
 
 .footer__bottom{
   display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
