@@ -167,10 +167,12 @@ table{border-collapse:collapse;width:100%}
 }
 .nav__inner{display:flex;align-items:center;gap:32px;height:100%}
 
-.brand{display:flex;align-items:center;gap:10px;flex:none}
-.brand__mark{width:auto;height:42px}
-.brand__name{font-size:1.125rem;font-weight:700;letter-spacing:-.03em}
-.brand__name span{color:var(--cyan-400)}
+.brand{display:flex;align-items:center;gap:11px;flex:none}
+.brand__mark{width:auto;height:34px}
+/* O wordmark original é azul-marinho, que sobre preto dá 1,12:1 de
+   contraste e desaparece. Usamos a versão clara, que é o equivalente
+   ao que uma marca tem para fundos escuros. */
+.brand__word{width:auto;height:19px}
 
 .nav__links{display:flex;align-items:center;gap:4px;margin-inline:auto}
 .nav__links a{
@@ -236,14 +238,6 @@ table{border-collapse:collapse;width:100%}
   display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;
 }
 
-.eyebrow{
-  display:inline-flex;align-items:center;gap:9px;
-  padding:7px 16px 7px 12px;margin-bottom:26px;
-  background:var(--glass);border:1px solid var(--line-hi);border-radius:var(--r-full);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  font-size:.8125rem;font-weight:500;color:var(--tx-2);
-}
-.eyebrow__dot{width:7px;height:7px;border-radius:50%;background:var(--ok-400);box-shadow:0 0 10px var(--ok-400)}
 
 .hero__title{
   font-size:clamp(2.6rem,5.6vw,4.4rem);
@@ -1216,9 +1210,9 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
   .neurex,.payments,.currency{gap:44px}
 }
 
-/* Os sete links ocupam 1071px numa linha, por isso a navegação passa a menu
-   antes de o resto do layout colapsar. */
-@media (max-width:1120px){
+/* A barra completa (marca + 6 links + idioma + botão) precisa de 1145px.
+   Passa a menu antes disso, e antes de o resto do layout colapsar. */
+@media (max-width:1180px){
   .nav__links{
     position:fixed;inset:var(--nav-h) 0 auto 0;
     flex-direction:column;align-items:stretch;gap:2px;
@@ -1263,6 +1257,12 @@ thead .compare__us{color:var(--brand-300);border-bottom-color:rgba(30,186,152,.3
 }
 
 @media (max-width:600px){
+  /* Abaixo desta largura a marca, o botão e o hambúrguer não cabem os
+     três: o hambúrguer ficava cortado fora do ecrã. Fica a marca e o
+     menu, que é o que ali faz falta. O apelo à acção está logo a seguir
+     no hero e outra vez no rodapé. */
+  .nav__actions .btn{display:none}
+
   .container{padding-inline:18px}
   .section{padding:76px 0}
   .section__head{margin-bottom:40px}

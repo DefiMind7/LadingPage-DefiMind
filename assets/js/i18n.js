@@ -25,8 +25,6 @@
       'nav.neurex': 'Neurex',
       'nav.faq': 'Questions',
       'nav.cta': 'Join waitlist',
-
-      'hero.badge': 'Wherever you are, in the currency you use',
       'hero.title': 'The bank that <span class="text-gradient">never touches</span> your money.',
       'hero.sub': 'Your savings earn every single day, on their own, protected by the same technology banks use to guard millions. One thing sets it apart: the key is yours and nobody else can reach it.',
       'hero.cta1': 'Join the waitlist',
@@ -302,8 +300,6 @@
       'nav.neurex': 'Neurex',
       'nav.faq': 'Preguntas',
       'nav.cta': 'Lista de espera',
-
-      'hero.badge': 'Estés donde estés, en la moneda que usas',
       'hero.title': 'El banco que <span class="text-gradient">nunca toca</span> tu dinero.',
       'hero.sub': 'Tus ahorros rinden todos los días, solos, protegidos por la misma tecnología que los bancos usan para guardar millones. Hay una diferencia que lo cambia todo: la llave es tuya y nadie más puede tocarla.',
       'hero.cta1': 'Entrar en la lista de espera',
